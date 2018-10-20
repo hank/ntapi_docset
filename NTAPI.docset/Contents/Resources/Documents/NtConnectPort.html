@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtConnectPort</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br/>
+<div class="text">NtConnectPort</div>
+<div class="highlight">NtConnectPort</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtConnectPort(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">ClientPortHandle</font></i>,
+  IN PUNICODE_STRING      <i><font color="blue">ServerPortName</font></i>,
+  IN PSECURITY_QUALITY_OF_SERVICE <i><font color="blue">SecurityQos</font></i>,
+  IN OUT PLPC_SECTION_OWNER_MEMORY <i><font color="blue">ClientSharedMemory</font></i> OPTIONAL,
+  OUT PLPC_SECTION_MEMORY <i><font color="blue">ServerSharedMemory</font></i> OPTIONAL,
+  OUT PULONG              <i><font color="blue">MaximumMessageLength</font></i> OPTIONAL,
+  IN                      <i><font color="blue">ConnectionInfo</font></i> OPTIONAL,
+  IN PULONG               <i><font color="blue">ConnectionInfoLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>NtConnectPort</u></b> is used by client process for establish
+<i>LPC</i> connection with Named Port's owner.
+
+<ul>
+<li>ClientPortHandle Result of call -
+<b>HANDLE</b> to Port Object.</li>
+</ul>
+<ul>
+<li>ServerPortName Name of port to connect
+to.</li>
+</ul>
+<ul>
+<li>SecurityQos </li>
+</ul>
+<ul>
+<li>ClientSharedMemory Used when calling
+process created Section Object for shared memory. See <a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a> for details.</li>
+</ul>
+<ul>
+<li>ServerSharedMemory Used when calling
+process didn't create Section Object. See <a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a> for details.</li>
+</ul>
+<ul>
+<li>MaximumMessageLength Maximum
+communication message length. This value is calculated by server on
+port creation process (see <a href="NtCreatePort.html">
+NtCreatePort</a>).</li>
+</ul>
+<ul>
+<li>ConnectionInfo Pointer to RAW buffer
+containing information from client. That information is received by
+server through <a href="LPC_MESSAGE.html">
+LPC_MESSAGE</a> with <font class="ParamNameDesc">MessageType</font>
+field set to <b>LPC_CONNECTION_REQUEST</b>.</li>
+</ul>
+<ul>
+<li>ConnectionInfoLength Size of
+<font class="ParamNameDesc">ConnectionInfo</font> buffer, in
+bytes.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="LPC_MESSAGE.html">
+LPC_MESSAGE</a><br/>
+</dd>
+<dd><a href="LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a><br/>
+</dd>
+<dd><a href="LPC_SECTION_OWNER_MEMORY.html">
+LPC_SECTION_OWNER_MEMORY</a><br/>
+</dd>
+<dd><a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br/>
+</dd>
+<dd><a href="NtCompleteConnectPort.html">
+NtCompleteConnectPort</a><br/>
+</dd>
+<dd><a href="NtCreatePort.html">
+NtCreatePort</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

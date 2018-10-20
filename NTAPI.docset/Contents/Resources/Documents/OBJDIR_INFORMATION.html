@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>OBJDIR_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 21 December</p>
+<br/>
+<div class="text">OBJDIR_INFORMATION</div>
+<div class="highlight">OBJDIR_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _OBJDIR_INFORMATION {
+<br/>
+
+
+  UNICODE_STRING          <i><font color="blue">ObjectName</font></i>;
+  UNICODE_STRING          <i><font color="blue">ObjectTypeName</font></i>;
+  BYTE                    <i><font color="blue">Data[1]</font></i>;
+
+
+
+} OBJDIR_INFORMATION, *POBJDIR_INFORMATION;
+</pre>
+<br/>
+<br/>
+<pre>
+Structure is used with <a href="NtQueryDirectoryObject.html">NtQueryDirectoryObject</a> function. Contains information of named object placed in object directory space.
+</pre>
+<hr width="40%"/>
+<pre>
+</pre>
+<h6><font color="#FF0000" size="12">ObjectName</font>
+</h6>
+<pre>Name of object.
+
+</pre>
+<h6>ObjectTypeName</h6>
+<pre>Name of object type.
+
+</pre>
+<h6>Data[1]</h6>
+<pre>Variable length data buffer.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQueryDirectoryObject.html">
+NtQueryDirectoryObject</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

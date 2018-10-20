@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtFlushVirtualMemory</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO4, 28 January</p>
+<br/>
+<div class="text">NtFlushVirtualMemory</div>
+<div class="highlight">NtFlushVirtualMemory</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtFlushVirtualMemory(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color="blue">*BaseAddress</font></i>,
+  IN OUT PULONG           <i><font color="blue">NumberOfBytesToFlush</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<br/>
+<b>NtFlushVirtualMemory</b> flushes mapped section view to
+file.<br/>
+<ul>
+<li>ProcessHandle <b>HANDLE</b> of process
+containing mapped view of section to flush.<br/></li>
+</ul>
+<ul>
+<li>*BaseAddress Pointer to <b>PVOID</b>
+value containing address of memory area to flush. On output this
+value is rounded to Page Size <i>(0x1000)</i>.<br/></li>
+</ul>
+<ul>
+<li>NumberOfBytesToFlush Pointer to
+<b>ULONG</b> value specifing length of area to flush. On output
+this value is rounded up to Page Size <i>(0x1000)</i>.<br/></li>
+</ul>
+<ul>
+<li>IoStatusBlock Pointer to
+<b>IO_STATUS_BLOCK</b> structure. After call Information member
+contains the same value as <font class="ParamNameDesc">NumberOfBytesToFlush</font> parameter.<br/>
+<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+<br/>
+<b>WARNING:</b> Two (or more) memory pages mapped in different
+calls of <a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a> cannot be flushed in one function call, even
+if both has the same <i>SECTION</i> as a source.<br/>
+<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a><br/>
+</dd>
+<dd><a href="NtOpenSection.html">
+NtOpenSection</a><br/>
+</dd>
+<dd><a href="NtUnmapViewOfSection.html">
+NtUnmapViewOfSection</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

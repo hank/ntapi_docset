@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>LPC_MESSAGE</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 January</p>
+<br/>
+<div class="text">LPC_MESSAGE</div>
+<div class="highlight">LPC_MESSAGE</div>
+<br/>
+<pre class="FnDefinition">typedef struct _LPC_MESSAGE {
+<br/>
+
+  USHORT                  <i><font color="blue">DataLength</font></i>;
+  USHORT                  <i><font color="blue">Length</font></i>;
+  USHORT                  <i><font color="blue">MessageType</font></i>;
+  USHORT                  <i><font color="blue">DataInfoOffset</font></i>;
+  CLIENT_ID               <i><font color="blue">ClientId</font></i>;
+  ULONG                   <i><font color="blue">MessageId</font></i>;
+  ULONG                   <i><font color="blue">CallbackId</font></i>;
+
+} LPC_MESSAGE, *PLPC_MESSAGE;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>LPC_MESSAGE</u></b> it's a header for all
+<b>LPC</b> messages. Any <b>LPC</b> message must contains at least
+<i>0x18</i> bytes length for <b><u>LPC_MESSAGE</u></b> header.
+<b><i><br/>
+<br/></i></b>
+<hr width="40%"/>
+<b><i><br/></i></b>
+<ul>
+<li>DataLength Length of additional data in
+message. Maximum length of data is <i>0x130</i> bytes.</li>
+</ul>
+<ul>
+<li>Length Length of message, including
+header. Maximum value is <i>0x148</i> bytes length.</li>
+</ul>
+<ul>
+<li>MessageType Type of message. This field
+is filled by system in message transfer process. Can be one of
+following:</li>
+</ul>
+<ul>
+<li><b>LPC_REQUEST</b>
+</li>
+<li><b>LPC_REPLY</b>
+</li>
+<li><b>LPC_DATAGRAM</b>
+</li>
+<li><b>LPC_LOST_REPLY</b>
+</li>
+<li><b>LPC_PORT_CLOSED</b>
+</li>
+<li><b>LPC_CLIENT_DIED</b>
+</li>
+<li><b>LPC_EXCEPTION</b>
+</li>
+<li><b>LPC_DEBUG_EVENT</b>
+</li>
+<li><b>LPC_ERROR_EVENT</b>
+</li>
+<li><b>LPC_CONNECTION_REQUEST</b>
+</li>
+</ul>
+<ul>
+<li>DataInfoOffset </li>
+</ul>
+<ul>
+<li>ClientId Port's client unique
+identifier.</li>
+</ul>
+<ul>
+<li>MessageId System set this field to
+actual value of incremental message counter.</li>
+</ul>
+<ul>
+<li>CallbackId <br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Structure is known also as <b><u>LPC_MESSAGE_HEADER</u></b>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAcceptConnectPort.html">NtAcceptConnectPort</a><br/>
+</dd>
+<dd><a href="NtImpersonateClientOfPort.html">NtImpersonateClientOfPort</a><br/>
+</dd>
+<dd><a href="NtListenPort.html">NtListenPort</a><br/>
+</dd>
+<dd><a href="NtReadRequestData.html">NtReadRequestData</a><br/>
+</dd>
+<dd><a href="NtReplyPort.html">NtReplyPort</a><br/>
+</dd>
+<dd><a href="NtReplyWaitReceivePort.html">NtReplyWaitReceivePort</a><br/>
+</dd>
+<dd><a href="NtReplyWaitReplyPort.html">NtReplyWaitReplyPort</a><br/>
+</dd>
+<dd><a href="NtRequestPort.html">NtRequestPort</a><br/>
+</dd>
+<dd><a href="NtRequestWaitReplyPort.html">NtRequestWaitReplyPort</a><br/>
+</dd>
+<dd><a href="NtWriteRequestData.html">NtWriteRequestData</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

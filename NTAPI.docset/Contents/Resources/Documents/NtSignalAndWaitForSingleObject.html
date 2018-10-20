@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSignalAndWaitForSingleObject</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 3 March</p>
+<br/>
+<div class="text">NtSignalAndWaitForSingleObject</div>
+<div class="highlight">NtSignalAndWaitForSingleObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSignalAndWaitForSingleObject(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ObjectToSignal</font></i>,
+  IN HANDLE               <i><font color="blue">WaitableObject</font></i>,
+  IN BOOLEAN              <i><font color="blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">Time</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtSignalAndWaitForSingleObject</u></b> signals one
+object and wait for second object. See also <i>Win32 API</i>
+<u>SignalObjectAndWait</u> description in <i>Microsoft SDK</i>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>ObjectToSignal <b>HANDLE</b> to object
+to signal. Possible object's types are:</li>
+</ul>
+<ul>
+<li>Event Object</li>
+<li>Semaphore Object</li>
+<li>Mutant Object</li>
+</ul>
+<ul>
+<li>WaitableObject <b>HANDLE</b> to object
+to wait for. Can be any waitable object.</li>
+</ul>
+<ul>
+<li>Alertable If set, <i>APC Routine</i>
+can break waiting.</li>
+</ul>
+<ul>
+<li>Time Optionally pointer to
+<b>LARGE_INTEGER</b> value specifing time (absolute or relative)
+when function time outs (in <i>100-ns</i> units). Negative value
+means relative time.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateEvent.html">
+NtCreateEvent</a><br/>
+</dd>
+<dd><a href="NtCreateMutant.html">
+NtCreateMutant</a><br/>
+</dd>
+<dd><a href="NtCreateSemaphore.html">
+NtCreateSemaphore</a><br/>
+</dd>
+<dd><a href="NtWaitForMultipleObjects.html">
+NtWaitForMultipleObjects</a><br/>
+</dd>
+<dd><a href="NtWaitForSingleObject.html">
+NtWaitForSingleObject</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

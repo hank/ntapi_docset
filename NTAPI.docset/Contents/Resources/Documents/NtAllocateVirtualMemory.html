@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtAllocateVirtualMemory</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 3 December</p>
+<br/>
+<div class="text">NtAllocateVirtualMemory</div>
+<div class="highlight">NtAllocateVirtualMemory</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtAllocateVirtualMemory(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color="blue">*BaseAddress</font></i>,
+  IN ULONG                <i><font color="blue">ZeroBits</font></i>,
+  IN OUT PULONG           <i><font color="blue">RegionSize</font></i>,
+  IN ULONG                <i><font color="blue">AllocationType</font></i>,
+  IN ULONG                <i><font color="blue">Protect</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>ProcessHandle</h6>
+<pre>Handle to Process Object opened with <b>PROCESS_VM_OPERATION</b> access.
+
+</pre>
+<h6>*BaseAddress</h6>
+<pre>If not zero, system tries to allocate virtual memory block on this virtual address. If BaseAddress is zero, system use first free virtual location.
+
+</pre>
+<h6>AllocationType</h6>
+<pre>Can be <b>MEM_RESERVE</b> or <b>MEM_COMMIT</b>.
+
+</pre>
+<h6>Protect</h6>
+<pre>One or combination of <b>PAGE_***</b> attributes.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtFreeVirtualMemory.html">NtFreeVirtualMemory</a><br/>
+</dd>
+<dd><a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

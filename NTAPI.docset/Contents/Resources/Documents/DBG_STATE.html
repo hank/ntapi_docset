@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>DBG_STATE</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO8, 17 April</p>
+<br/>
+<div class="text">DBG_STATE</div>
+<div class="highlight">DBG_STATE</div>
+<br/>
+<pre class="FnDefinition">typedef enum _DBG_STATE {
+<br/>
+
+
+    <a href="#DbgIdle">DbgIdle</a>,
+    <a href="#DbgReplyPending">DbgReplyPending</a>,
+    <a href="#DbgCreateThreadStateChange">DbgCreateThreadStateChange</a>,
+    <a href="#DbgCreateProcessStateChange">DbgCreateProcessStateChange</a>,
+    <a href="#DbgExitThreadStateChange">DbgExitThreadStateChange</a>,
+    <a href="#DbgExitProcessStateChange">DbgExitProcessStateChange</a>,
+    <a href="#DbgExceptionStateChange">DbgExceptionStateChange</a>,
+    <a href="#DbgBreakpointStateChange">DbgBreakpointStateChange</a>,
+    <a href="#DbgSingleStepStateChange">DbgSingleStepStateChange</a>,
+    <a href="#DbgLoadDllStateChange">DbgLoadDllStateChange</a>,
+    <a href="#DbgUnloadDllStateChange">DbgUnloadDllStateChange</a>
+
+
+} DBG_STATE, *PDBG_STATE;
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>DBG_STATE</u></b> enumeration is used by <u>Debug Objects</u>
+as a member of <a href="DBGUI_WAIT_STATE_CHANGE.html">DBGUI_WAIT_STATE_CHANGE</a>
+structure returned in successfull call to <a href="NtWaitForDebugEvent.html">NtWaitForDebugEvent</a> function. It
+describes current state of <u>Debug Object</u>. Possible values
+are:<br/>
+<h6><a id="DbgIdle" name="DbgIdle"></a>
+</h6>
+<ul>
+<li>DbgIdle </li>
+</ul>
+<h6><a id="DbgReplyPending" name="DbgReplyPending"></a>
+</h6>
+<ul>
+<li>DbgReplyPending </li>
+</ul>
+<h6><a id="DbgCreateThreadStateChange" name="DbgCreateThreadStateChange"></a>
+</h6>
+<ul>
+<li>DbgCreateThreadStateChange </li>
+</ul>
+<h6><a id="DbgCreateProcessStateChange" name="DbgCreateProcessStateChange"></a>
+</h6>
+<ul>
+<li>DbgCreateProcessStateChange </li>
+</ul>
+<h6><a id="DbgExitThreadStateChange" name="DbgExitThreadStateChange"></a>
+</h6>
+<ul>
+<li>DbgExitThreadStateChange </li>
+</ul>
+<h6><a id="DbgExitProcessStateChange" name="DbgExitProcessStateChange"></a>
+</h6>
+<ul>
+<li>DbgExitProcessStateChange </li>
+</ul>
+<h6><a id="DbgExceptionStateChange" name="DbgExceptionStateChange"></a>
+</h6>
+<ul>
+<li>DbgExceptionStateChange </li>
+</ul>
+<h6><a id="DbgBreakpointStateChange" name="DbgBreakpointStateChange"></a>
+</h6>
+<ul>
+<li>DbgBreakpointStateChange </li>
+</ul>
+<h6><a id="DbgSingleStepStateChange" name="DbgSingleStepStateChange"></a>
+</h6>
+<ul>
+<li>DbgSingleStepStateChange </li>
+</ul>
+<h6><a id="DbgLoadDllStateChange" name="DbgLoadDllStateChange"></a>
+</h6>
+<ul>
+<li>DbgLoadDllStateChange </li>
+</ul>
+<h6><a id="DbgUnloadDllStateChange" name="DbgUnloadDllStateChange"></a>
+</h6>
+<ul>
+<li>DbgUnloadDllStateChange <br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="DBGUI_WAIT_STATE_CHANGE.html">DBGUI_WAIT_STATE_CHANGE</a><br/>
+</dd>
+<dd><a href="NtWaitForDebugObject.html">NtWaitForDebugObject</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

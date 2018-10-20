@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtReleaseKeyedEvent</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO7, 27 April</p>
+<br/>
+<div class="text">NtReleaseKeyedEvent</div>
+<div class="highlight">NtReleaseKeyedEvent</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtReleaseKeyedEvent(
+<br/>
+
+  IN HANDLE               <i><font color="blue">KeyedEventHandle</font></i>,
+  IN PVOID                <i><font color="blue">Key</font></i>,
+  IN BOOLEAN              <i><font color="blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">Timeout</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+This function is used for signal <i><u>KeyedEvent</u></i> object
+with value specified as <font class="ParamNameDesc">Key</font>
+parameter. If there are no other thread (or threads) waiting for
+the same <i><u>KeyedEvent</u></i> with the same <font class="ParamNameDesc">Key</font> value, waiting is performed up to
+<a href="NtWaitForKeyedEvent.html">
+NtWaitForKeyedEvent</a> called by any other thread.
+
+<ul>
+<li>KeyedEventHandle <b>HANDLE</b> to
+<i><u>KeyedEvent</u></i> object.</li>
+</ul>
+<ul>
+<li>Key Value used as <i>KEY</i>. Note that
+this value has to have lowest bit cleared (must divide by
+two).</li>
+</ul>
+<ul>
+<li>Alertable If set, waiting can be broken
+by alerting thread.</li>
+</ul>
+<ul>
+<li>Timeout Optional pointer for timeout
+value.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateKeyedEvent.html">
+NtCreateKeyedEvent</a><br/>
+</dd>
+<dd><a href="NtOpenKeyedEvent.html">
+NtOpenKeyedEvent</a><br/>
+</dd>
+<dd><a href="NtWaitForKeyedEvent.html">
+NtWaitForKeyedEvent</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

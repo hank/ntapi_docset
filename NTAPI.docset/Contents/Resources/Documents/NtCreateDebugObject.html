@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateDebugObject</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO8, 2O May</p>
+<br/>
+<div class="text">NtCreateDebugObject</div>
+<div class="highlight">NtCreateDebugObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateDebugObject(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">DebugObjectHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">KillProcessOnExit</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtCreateDebugObject</u></b> is used for <b><i>Debug
+Object</i></b> creation. <b><i>Debug Object</i></b> it's a new
+functionality implemented in <i>Windows XP</i> and above as support
+for debuging <i>User Mode</i> applications. In previous versions of
+<i>NT</i> debuging was implemented with Port objects (see <a href="NtCreatePort.html">
+NtCreatePort</a>). Application can debug one or few different
+applications in the same time, but need to create as many
+<b><i>Debug Objects</i></b> as number of debuged processes.<br/>
+<br/>
+There're two methods of start debugging. To start application in
+debug mode, user need to use <a href="NtCreateProcessEx.html">NtCreateProcessEx</a> function (avaiable
+on XP+) with <b>HANDLE</b> to previously created <b><i>Debug
+Object</i></b>. Or just attach debugger to working process by
+calling <a href="NtDebugActiveProcess.html">
+NtDebugActiveProcess</a>.
+
+<ul>
+<li>DebugObjectHandle Pointer to newly
+created <b><i>Debug Object</i></b> <b>HANDLE</b>.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access mask for Debug
+Object. Can be one or more of following:<br/></li>
+</ul>
+<ul>
+<li><b>DEBUGOBJECT_WAIT_STATE_CHANGE</b>
+</li>
+<li><b>DEBUGOBJECT_ADD_REMOVE_PROCESS</b>
+</li>
+<li><b>DEBUGOBJECT_ALL_ACCESS</b>
+</li>
+</ul>
+<ul>
+<li>ObjectAttributes Optionally can define
+object's name.</li>
+</ul>
+<ul>
+<li>KillProcessOnExit If set, debuged
+process will be terminated with closing <b><i>Debug
+Object</i></b>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="DBG_STATE.html">
+DBG_STATE</a><br/>
+</dd>
+<dd><a href="NtCreateProcessEx.html">NtCreateProcessEx</a><br/>
+</dd>
+<dd><a href="NtDebugActiveProcess.html">
+NtDebugActiveProcess</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

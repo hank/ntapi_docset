@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetIntervalProfile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 25 February</p>
+<br/>
+<div class="text">NtSetIntervalProfile</div>
+<div class="highlight">NtSetIntervalProfile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetIntervalProfile(
+<br/>
+
+  IN ULONG                <i><font color="blue">Interval</font></i>,
+  IN KPROFILE_SOURCE      <i><font color="blue">Source</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtSetIntervalProfile</u></b> sets delay between
+performance counter's ticks. Setting profile's interval has global
+effect for all running processes.<br/>
+<br/>
+User can set interval only for software performance counters. To
+determine if counter is software or not, call <a href="NtQueryIntervalProfile.html">
+NtQueryIntervalProfile</a>. If returned interval is zero, queried
+counter is hardware counter (build in CPU).<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>Interval New interval, in ms.</li>
+</ul>
+<ul>
+<li>Source Performance counter's
+identifier, defined in <a href="KPROFILE_SOURCE.html">
+KPROFILE_SOURCE</a> enumeration type.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="KPROFILE_SOURCE.html">
+KPROFILE_SOURCE</a><br/>
+</dd>
+<dd><a href="NtCreateProfile.html">
+NtCreateProfile</a><br/>
+</dd>
+<dd><a href="NtQueryIntervalProfile.html">
+NtQueryIntervalProfile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SECTION_BASIC_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 March</p>
+<br/>
+<div class="text">SECTION_BASIC_INFORMATION</div>
+<div class="highlight">SECTION_BASIC_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _SECTION_BASIC_INFORMATION {
+<br/>
+
+  ULONG                   <i><font color="blue">Unknown</font></i>;
+  ULONG                   <i><font color="blue">SectionAttributes</font></i>;
+  LARGE_INTEGER           <i><font color="blue">SectionSize</font></i>;
+
+} SECTION_BASIC_INFORMATION, *PSECTION_BASIC_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>SECTION_BASIC_INFORMATION</u></b> is returned as a
+result of call <a href="NtQuerySection.html">
+NtQuerySection</a> with <a href="SECTION_INFORMATION_CLASS.html#SectionBasicInformation">
+SectionBasicInformation</a> information class.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>Unknown <b><i>(?)</i></b>, always set
+to zero.</li>
+</ul>
+<ul>
+<li>SectionAttributes Can be one or
+combination of:</li>
+</ul>
+<ul>
+<li><b>SEC_RESERVE</b>
+</li>
+<li><b>SEC_IMAGE</b>
+</li>
+<li><b>SEC_FILE</b>
+</li>
+</ul>
+<ul>
+<li>SectionSize Size of section, in bytes.
+This value equals to section's size declared in a call to <a href="NtCreateSection.html">
+NtCreateSection</a> or <a href="NtExtendSection.html">
+NtExtendSection</a>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtExtendSection.html">
+NtExtendSection</a><br/>
+</dd>
+<dd><a href="NtQuerySection.html">
+NtQuerySection</a><br/>
+</dd>
+<dd><a href="SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a><br/>
+</dd>
+<dd><a href="SECTION_INFORMATION_CLASS.html">
+SECTION_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetContextThread</title>
+<link href="css_7.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_8.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 1O December</p>
+<br/>
+<div class="text">NtSetContextThread</div>
+<div class="highlight">NtSetContextThread</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetContextThread(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN PCONTEXT             <i><font color="blue">Context</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>ThreadHandle</h6>
+<pre>Handle to Thread Object opened with <b>THREAD_SET_CONTEXT</b> access flag.
+
+</pre>
+<h6>Context</h6>
+<pre>Context to set to thread.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtContinue.html">
+NtContinue</a><br/>
+</dd>
+<dd><a href="NtCreateThread.html">
+NtCreateThread</a><br/>
+</dd>
+<dd><a href="NtGetContextThread.html">
+NtGetContextThread</a><br/>
+</dd>
+<dd><a href="RtlInitializeContext.html">
+RtlInitializeContext</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

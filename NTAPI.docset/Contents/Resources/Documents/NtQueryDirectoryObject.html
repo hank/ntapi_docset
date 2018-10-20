@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQueryDirectoryObject</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 21 December</p>
+<br/>
+<div class="text">NtQueryDirectoryObject</div>
+<div class="highlight">NtQueryDirectoryObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQueryDirectoryObject(
+<br/>
+
+  IN HANDLE               <i><font color="blue">DirectoryObjectHandle</font></i>,
+  OUT POBJDIR_INFORMATION <i><font color="blue">DirObjInformation</font></i>,
+  IN ULONG                <i><font color="blue">BufferLength</font></i>,
+  IN BOOLEAN              <i><font color="blue">GetNextIndex</font></i>,
+  IN BOOLEAN              <i><font color="blue">IgnoreInputIndex</font></i>,
+  IN OUT PULONG           <i><font color="blue">ObjectIndex</font></i>,
+  OUT PULONG              <i><font color="blue">DataWritten</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>DirectoryObjectHandle</h6>
+<pre>Handle to Directory Object opened with <b>DIRECTORY_QUERY</b> access.
+
+</pre>
+<h6>DirObjInformation</h6>
+<pre>Pointer to <a href="OBJDIR_INFORMATION.html">OBJDIR_INFORMATION</a> structure. Warning: structure has variable length dependly to length of object name.
+To test for required length of buffer use <font class="ParamNameDesc">DataWritten</font> parameter.
+
+</pre>
+<h6>BufferLength</h6>
+<pre>Length of <font class="ParamNameDesc">DirObjInformation</font> buffer.
+
+</pre>
+<h6>GetNextIndex</h6>
+<pre>Decide of <font class="ParamNameDesc">ObjectIndex</font> parameter usage on output.
+  <b><i>If FALSE:</i></b>       <font class="ParamNameDesc">ObjectIndex</font> is number of object in Object Directory.
+  <b><i>If TRUE:</i></b>        <font class="ParamNameDesc">ObjectIndex</font> is index of next object to quered object (see below) in Object Directory.
+
+</pre>
+<h6>IgnoreInputIndex</h6>
+<pre>Decide how to use <font class="ParamNameDesc">ObjectIndex</font> on function input.
+  <b><i>If FALSE:</i></b>       <font class="ParamNameDesc">ObjectIndex</font> point to <b>ULONG</b> index of object in Object Directory.
+  <b><i>If TRUE:</i></b>        <font class="ParamNameDesc">ObjectIndex</font> input value is ignored. Function always return informations about first object in Object Directory.
+
+</pre>
+<h6>ObjectIndex</h6>
+<pre>Pointer to <b>ULONG</b> value described above.
+
+</pre>
+<h6>DataWritten</h6>
+<pre>Pointer to <b>ULONG</b> value receiving required / written buffer size. This parameter is optional.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateDirectoryObject.html">
+NtCreateDirectoryObject</a><br/>
+</dd>
+<dd><a href="NtOpenDirectoryObject.html">
+NtOpenDirectoryObject</a><br/>
+</dd>
+<dd><a href="OBJDIR_INFORMATION.html">OBJDIR_INFORMATION</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

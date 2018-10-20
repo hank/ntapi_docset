@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtTerminateThread</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 16 November</p>
+<br/>
+<div class="text">NtTerminateThread</div>
+<div class="highlight">NtTerminateThread</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtTerminateThread(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN NTSTATUS             <i><font color="blue">ExitStatus</font></i> );
+
+</pre>
+<br/>
+<br/>
+<h6>ThreadHandle</h6>
+<pre>Open handle to thread object.<br/>
+</pre>
+<h6>ExitStatus</h6>
+<pre>Result of thread, as <b>NTSTATUS</b>.<br/>
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateThread.html">
+NtCreateThread</a><br/>
+</dd>
+<dd><a href="NtOpenThread.html">
+NtOpenThread</a><br/>
+</dd>
+<dd><a href="NtTerminateProcess.html">
+NtTerminateProcess</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

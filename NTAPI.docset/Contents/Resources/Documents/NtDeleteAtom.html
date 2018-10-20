@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtDeleteAtom</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br/>
+<div class="text">NtDeleteAtom</div>
+<div class="highlight">NtDeleteAtom</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtDeleteAtom(
+<br/>
+
+  IN RTL_ATOM             <i><font color="blue">Atom</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtDeleteAtom</u></b> remove Atom from Global Atom
+Table. If Atom's reference counter is greater then <i>1</i>,
+function decrements this counter, but Atom stayed in Global Atom
+Table.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>Atom Atom identifier.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="ATOM_BASIC_INFORMATION.html">ATOM_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="NtAddAtom.html">NtAddAtom</a><br/>
+</dd>
+<dd><a href="NtFindAtom.html">NtFindAtom</a><br/>
+</dd>
+<dd><a href="NtQueryInformationAtom.html">NtQueryInformationAtom</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

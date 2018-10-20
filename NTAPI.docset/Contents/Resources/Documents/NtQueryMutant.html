@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQueryMutant</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 24 November</p>
+<br/>
+<div class="text">NtQueryMutant</div>
+<div class="highlight">NtQueryMutant</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQueryMutant(
+<br/>
+
+  IN HANDLE               <i><font color="blue">MutantHandle</font></i>,
+  IN MUTANT_INFORMATION_CLASS <i><font color="blue">MutantInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">MutantInformation</font></i>,
+  IN ULONG                <i><font color="blue">MutantInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ResultLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<h6>MutantHandle</h6>
+<pre>Handle to Mutant object.
+
+</pre>
+<h6>MutantInformationClass</h6>
+<pre>Is defined as enum:
+        
+        <b><font color="blue">typedef enum</font></b> <b>_MUTANT_INFORMATION_CLASS</b>
+        {
+                MutantBasicInformation
+
+        } <b>MUTANT_INFORMATION_CLASS</b>, *<b>PMUTANT_INFORMATION_CLASS</b>;
+
+</pre>
+<h6>MutantInformation</h6>
+<pre>Buffer for result. As long as only one information type is defined, set <font class="ParamNameDesc">MutantInformation</font> as a pointer to <a href="MUTANT_BASIC_INFORMATION.html">MUTANT_BASIC_INFORMATION</a> structure.
+
+</pre>
+<h6>MutantInformationLength</h6>
+<pre>Size of buffer.
+
+</pre>
+<h6>ResultLength</h6>
+<pre>Number of bytes written to buffer.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="MUTANT_BASIC_INFORMATION.html">MUTANT_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="NtCreateMutant.html">
+NtCreateMutant</a><br/>
+</dd>
+<dd><a href="NtOpenMutant.html">
+NtOpenMutant</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

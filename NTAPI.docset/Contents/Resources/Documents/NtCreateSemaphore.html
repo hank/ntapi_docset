@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateSemaphore</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br/>
+<div class="text">NtCreateSemaphore</div>
+<div class="highlight">NtCreateSemaphore</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateSemaphore(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">SemaphoreHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">InitialCount</font></i>,
+  IN ULONG                <i><font color="blue">MaximumCount</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtCreateSemaphore</u></b> creates Semaphore Object
+with or without name in Object Namespace, and sets initial and
+maximum releases number.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>SemaphoreHandle Result of call -
+pointer to <b>HANDLE</b> to Semaphore Object.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access rights to
+Semaphore Object. Can be one of:</li>
+</ul>
+<ul>
+<li><b>SEMAPHORE_QUERY_STATE</b>
+</li>
+<li><b>SEMAPHORE_MODIFY_STATE</b>
+</li>
+<li><b>SEMAPHORE_ALL_ACCESS</b>
+</li>
+</ul>
+<ul>
+<li>ObjectAttributes Optional pointer to
+<b>OBJECT_ATTRIBUTES</b> structure containing semaphore's
+name.</li>
+</ul>
+<ul>
+<li>InitialCount Initial state of
+semaphore. Typically the same as <font class="ParamNameDesc">MaximumCount</font>.</li>
+</ul>
+<ul>
+<li>MaximumCount Maximum releases
+number.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtOpenSemaphore.html">
+NtOpenSemaphore</a><br/>
+</dd>
+<dd><a href="NtQuerySemaphore.html">
+NtQuerySemaphore</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

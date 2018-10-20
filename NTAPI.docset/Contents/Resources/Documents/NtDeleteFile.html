@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtDeleteFile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 29 December</p>
+<br/>
+<div class="text">NtDeleteFile</div>
+<div class="highlight">NtDeleteFile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtDeleteFile(
+<br/>
+
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+It's very interesting NT System Call... Normally, file deletion is realised as <a href="FILE_INFORMATION_CLASS.html#FileDispositionInformation">FileDispositionInformation</a> class in a call to <a href="NtSetInformationFile.html">NtSetInformationFile</a>. When you use <b><u>NtDeleteFile</u></b>, file will be deleted immediatly after call (system isn't waiting for close last <b>HANDLE</b> to file).
+</pre>
+<hr width="40%"/>
+<pre>
+</pre>
+<h6><font color="#FF0000" size="12">ObjectAttributes</font>
+</h6>
+<pre>You can manipulate <u>ObjectName</u> and <u>RootDirectory</u> members. 
+Example: 
+  If you have only file name as Unicode string, use it as <u>ObjectName</u>.
+  If you have only a <b>HANDLE</b> to file, set it as <u>RootDirectory</u>. Set <u>ObjectName</u> as empty string.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateFile.html">
+NtCreateFile</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtSetInformationFile.html">NtSetInformationFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

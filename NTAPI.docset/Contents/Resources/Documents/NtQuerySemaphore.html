@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQuerySemaphore</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br/>
+<div class="text">NtQuerySemaphore</div>
+<div class="highlight">NtQuerySemaphore</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQuerySemaphore(
+<br/>
+
+  IN HANDLE               <i><font color="blue">SemaphoreHandle</font></i>,
+  IN SEMAPHORE_INFORMATION_CLASS <i><font color="blue">SemaphoreInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">SemaphoreInformation</font></i>,
+  IN ULONG                <i><font color="blue">SemaphoreInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtQuerySemaphore</u></b> retrieve semaphore's
+parameters (see <a href="SEMAPHORE_BASIC_INFORMATION.html">
+SEMAPHORE_BASIC_INFORMATION</a>).<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>SemaphoreHandle <b>HANDLE</b> to
+Semaphore Object opened with <b>SEMAPHORE_QUERY_STATE</b>
+access.</li>
+</ul>
+<ul>
+<li>SemaphoreInformationClass Information
+class descripted in <a href="SEMAPHORE_INFORMATION_CLASS.html">
+SEMAPHORE_INFORMATION_CLASS</a> section.</li>
+</ul>
+<ul>
+<li>SemaphoreInformation Pointer to user's
+allocated buffer for result data.</li>
+</ul>
+<ul>
+<li>SemaphoreInformationLength Size of
+<font class="ParamNameDesc">SemaphoreInformation</font> buffer, in
+bytes.</li>
+</ul>
+<ul>
+<li>ReturnLength Optionally returns
+required buffer size.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateSemaphore.html">
+NtCreateSemaphore</a><br/>
+</dd>
+<dd><a href="NtOpenSemaphore.html">
+NtOpenSemaphore</a><br/>
+</dd>
+<dd><a href="SEMAPHORE_BASIC_INFORMATION.html">
+SEMAPHORE_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="SEMAPHORE_INFORMATION_CLASS.html">
+SEMAPHORE_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateThread</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 11 November</p>
+<br/>
+<div class="text">NtCreateThread</div>
+<div class="highlight">NtCreateThread</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateThread(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">ThreadHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  OUT PCLIENT_ID          <i><font color="blue">ClientId</font></i>,
+  IN PCONTEXT             <i><font color="blue">ThreadContext</font></i>,
+  IN PINITIAL_TEB         <i><font color="blue">InitialTeb</font></i>,
+  IN BOOLEAN              <i><font color="blue">CreateSuspended</font></i> );
+
+</pre>
+<br/>
+<br/>
+<h6>ThreadHandle</h6>
+<div class="reg">Caller supplied storage for the resulting
+handle.</div>
+<pre>
+</pre>
+<h6>DesiredAccess</h6>
+<div class="reg">Specifies the allowed or desired access to the
+thread.</div>
+<pre>
+</pre>
+<h6>ObjectAttributes</h6>
+<div class="reg">Initialized attributes for the object.</div>
+<pre>
+</pre>
+<h6>ProcessHandle</h6>
+<div class="reg">Handle to the threads parent process.</div>
+<pre>
+</pre>
+<h6>ClientId</h6>
+<div class="reg">Caller supplies storage for returned process id
+and thread id.</div>
+<pre>
+</pre>
+<h6>ThreadContext</h6>
+<div class="reg">Initial processor context for the thread.</div>
+<pre>
+</pre>
+<h6>InitialTeb</h6>
+<div class="reg">Initial user mode stack context for the
+thread.</div>
+<pre>
+</pre>
+<h6>CreateSuspended</h6>
+<div class="reg">Specifies if the thread is ready for scheduling.
+See <a href="NtContinue.html">NtContinue</a> for more
+information.</div>
+<pre>
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="INITIAL_TEB.html">INITIAL_TEB</a><br/>
+</dd>
+<dd><a href="NtContinue.html">NtContinue</a><br/>
+</dd>
+<dd><a href="NtCreateProcess.html">
+NtCreateProcess</a><br/>
+</dd>
+<dd><a href="NtTerminateThread.html">NtTerminateThread</a><br/>
+</dd>
+<dd><a href="NtAlertResumeThread.html">NtAlertResumeThread</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

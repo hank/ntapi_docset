@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCompleteConnectPort</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br/>
+<div class="text">NtCompleteConnectPort</div>
+<div class="highlight">NtCompleteConnectPort</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCompleteConnectPort(
+<br/>
+
+  IN HANDLE               <i><font color="blue">PortHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>NtCompleteConnectPort</u></b> is called by server process
+after all initializations for new connection.
+
+<ul>
+<li>PortHandle <b>HANDLE</b> to Port Object
+received with <a href="NtAcceptConnectPort.html">NtAcceptConnectPort</a> call.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Return from <a href="NtConnectPort.html">NtConnectPort</a> on
+client's side is synchronised with return from this call. Both
+sides of <i>LPC</i> connection are ready for sending and receiving
+<i>LPC</i> messages.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br/>
+</dd>
+<dd><a href="NtConnectPort.html">NtConnectPort</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

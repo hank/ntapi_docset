@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SECTION_INFORMATION_CLASS</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 March</p>
+<br/>
+<div class="text">SECTION_INFORMATION_CLASS</div>
+<div class="highlight">SECTION_INFORMATION_CLASS</div>
+<br/>
+<pre class="FnDefinition">typedef enum _SECTION_INFORMATION_CLASS {
+<br/>
+
+
+    <a href="#SectionBasicInformation">SectionBasicInformation</a>,
+    <a href="#SectionImageInformation">SectionImageInformation</a>
+
+
+} SECTION_INFORMATION_CLASS, *PSECTION_INFORMATION_CLASS;
+</pre>
+<br/>
+<br/>
+<br/>
+Enumeration type <b><u>SECTION_INFORMATION_CLASS</u></b> is used in
+a call to <a href="NtQuerySection.html">
+NtQuerySection</a> function.<br/>
+<br/>
+This type can be one of:
+
+<h6><a id="SectionBasicInformation" name="SectionBasicInformation"></a>
+</h6>
+<ul>
+<li>SectionBasicInformation Result buffer
+contains structure <a href="SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a>.
+Buffer size shoud be set to <i>0x0C</i>.</li>
+</ul>
+<h6><a id="SectionImageInformation" name="SectionImageInformation"></a>
+</h6>
+<ul>
+<li>SectionImageInformation Result buffer
+contains structure <a href="SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a>.
+Buffer size shoud be set to <i>0x28</i>. This information class is
+accessable only where section was created with <b>HANDLE</b> to
+open executable file (see <a href="NtCreateSection.html">
+NtCreateSection</a> for details).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtOpenSection.html">
+NtOpenSection</a><br/>
+</dd>
+<dd><a href="NtQuerySection.html">
+NtQuerySection</a><br/>
+</dd>
+<dd><a href="SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="SECTION_IMAGE_INFORMATION.html">SECTION_IMAGE_INFORMATION</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

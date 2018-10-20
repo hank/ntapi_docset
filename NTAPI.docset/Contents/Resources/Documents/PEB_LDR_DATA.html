@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>PEB_LDR_DATA</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 27 December</p>
+<br/>
+<div class="text">PEB_LDR_DATA</div>
+<div class="highlight">PEB_LDR_DATA</div>
+<br/>
+<pre class="FnDefinition">typedef struct _PEB_LDR_DATA {
+<br/>
+
+
+  ULONG                   <i><font color="blue">Length</font></i>;
+  BOOLEAN                 <i><font color="blue">Initialized</font></i>;
+  PVOID                   <i><font color="blue">SsHandle</font></i>;
+  LIST_ENTRY              <i><font color="blue">InLoadOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color="blue">InMemoryOrderModuleList</font></i>;
+  LIST_ENTRY              <i><font color="blue">InInitializationOrderModuleList</font></i>;
+
+
+
+} PEB_LDR_DATA, *PPEB_LDR_DATA;
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>Length</h6>
+<pre>Size of structure, used by <b>ntdll.dll</b> as structure version ID.
+
+</pre>
+<h6>Initialized</h6>
+<pre>If set, loader data section for current process is initialized.
+
+</pre>
+<h6>SsHandle</h6>
+<pre>- ???
+
+</pre>
+<h6>InLoadOrderModuleList</h6>
+<pre>Doubly linked list containing pointers to <a href="LDR_MODULE.html">LDR_MODULE</a> structure for previous and next module in load order.
+
+</pre>
+<h6>InMemoryOrderModuleList</h6>
+<pre>As above, but in memory placement order.
+
+</pre>
+<h6>InInitializationOrderModuleList</h6>
+<pre>As <font class="ParamNameDesc">InLoadOrderModuleList</font>, but in initialization order.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="LDR_MODULE.html">LDR_MODULE</a><br/>
+</dd>
+<dd><a href="PEB.html">PEB</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

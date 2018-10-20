@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateMailslotFile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 February</p>
+<br/>
+<div class="text">NtCreateMailslotFile</div>
+<div class="highlight">NtCreateMailslotFile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateMailslotFile(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">MailslotFileHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color="blue">CreateOptions</font></i>,
+  IN ULONG                <i><font color="blue">MailslotQuota</font></i>,
+  IN ULONG                <i><font color="blue">MaxMessageSize</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ReadTimeOut</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtCreateMailslotFile</u></b> creates especial File
+Object called <i>Mailslot</i>. See <i>Microsoft SDK</i> for more
+information about <i>Mailslots</i>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>MailslotFileHandle Result of call -
+<b>HANDLE</b> to Mailslot File Object.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access rights associated
+with opened handle.</li>
+</ul>
+<ul>
+<li>ObjectAttributes Pointer to
+<b>OBJECT_ATTRIBUTES</b> structure contains valid object name. Name
+must be in format <font color="red">"\\??\MAILSLOT\..."</font>
+where <font color="red">"..."</font> means unique name of
+Mailslot.</li>
+</ul>
+<ul>
+<li>IoStatusBlock IO result of call.</li>
+</ul>
+<ul>
+<li>CreateOptions Can be combination
+of:</li>
+</ul>
+<ul>
+<li><b>FILE_WRITE_THROUGH</b>
+</li>
+<li><b>FILE_SYNCHRONOUS_IO_ALERT</b>
+</li>
+<li><b>FILE_SYNCHRONOUS_IO_NONALERT</b>
+</li>
+</ul>
+<ul>
+<li>MailslotQuota - ???</li>
+</ul>
+<ul>
+<li>MaxMessageSize Maximum message size, or
+<b>MAILSLOT_SIZE_AUTO</b> for automatic message size.</li>
+</ul>
+<ul>
+<li>ReadTimeOut Timeout value, or <i>-1</i>
+for infinite waiting.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="FILE_MAILSLOT_QUERY_INFORMATION.html">FILE_MAILSLOT_QUERY_INFORMATION</a><br/>
+</dd>
+<dd><a href="FILE_MAILSLOT_SET_INFORMATION.html">FILE_MAILSLOT_SET_INFORMATION</a><br/>
+</dd>
+<dd><a href="NtQueryInformationFile.html">
+NtQueryInformationFile</a><br/>
+</dd>
+<dd><a href="NtReadFile.html">
+NtReadFile</a><br/>
+</dd>
+<dd><a href="NtSetInformationFile.html">
+NtSetInformationFile</a><br/>
+</dd>
+<dd><a href="NtWriteFile.html">
+NtWriteFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

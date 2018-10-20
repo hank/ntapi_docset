@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQueryEvent</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br/>
+<div class="text">NtQueryEvent</div>
+<div class="highlight">NtQueryEvent</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQueryEvent(
+<br/>
+
+  IN HANDLE               <i><font color="blue">EventHandle</font></i>,
+  IN EVENT_INFORMATION_CLASS <i><font color="blue">EventInformationClass</font></i>,
+  OUT PVOID               <i><font color="blue">EventInformation</font></i>,
+  IN ULONG                <i><font color="blue">EventInformationLength</font></i>,
+  OUT PULONG              <i><font color="blue">ReturnLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>EventHandle <b>HANDLE</b> to Event
+Object opened with <b>EVENT_QUERY_STATE</b> access.</li>
+</ul>
+<ul>
+<li>EventInformationClass See <a href="EVENT_INFORMATION_CLASS.html">
+EVENT_INFORMATION_CLASS</a> for details.</li>
+</ul>
+<ul>
+<li>EventInformation Caller's allocated
+buffer for result data.</li>
+</ul>
+<ul>
+<li>EventInformationLength Length of
+<font class="ParamNameDesc">EventInformation</font> buffer, in
+bytes.</li>
+</ul>
+<ul>
+<li>ReturnLength Returns required/used size
+of <font class="ParamNameDesc">EventInformation</font> buffer.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Currently there're only one information class for use with Event
+Object. See <a href="EVENT_INFORMATION_CLASS.html">
+EVENT_INFORMATION_CLASS</a> for details.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="EVENT_BASIC_INFORMATION.html">
+EVENT_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="EVENT_INFORMATION_CLASS.html">
+EVENT_INFORMATION_CLASS</a><br/>
+</dd>
+<dd><a href="NtCreateEvent.html">
+NtCreateEvent</a><br/>
+</dd>
+<dd><a href="NtOpenEvent.html">
+NtOpenEvent</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

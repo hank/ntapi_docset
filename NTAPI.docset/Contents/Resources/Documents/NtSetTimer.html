@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetTimer</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br/>
+<div class="text">NtSetTimer</div>
+<div class="highlight">NtSetTimer</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetTimer(
+<br/>
+
+  IN HANDLE               <i><font color="blue">TimerHandle</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">DueTime</font></i>,
+  IN PTIMER_APC_ROUTINE   <i><font color="blue">TimerApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">TimerContext</font></i> OPTIONAL,
+  IN BOOLEAN              <i><font color="blue">ResumeTimer</font></i>,
+  IN LONG                 <i><font color="blue">Period</font></i> OPTIONAL,
+  OUT PBOOLEAN            <i><font color="blue">PreviousState</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>TimerHandle <b>HANDLE</b> to Timer
+Object opened with <b>TIMER_MODIFY_STATE</b> access.</li>
+</ul>
+<ul>
+<li>DueTime Time when timer should be set,
+in <i>100ns</i> units. If it is negative value, it means relative
+time.</li>
+</ul>
+<ul>
+<li>TimerApcRoutine User's APC routine,
+defined as follows:</li>
+</ul>
+<pre>        <font color="blue">typedef void</font> (*<b>PTIMER_APC_ROUTINE</b>)(
+                        IN PVOID TimerContext,
+                        IN ULONG TimerLowValue,
+                        IN LONG TimerHighValue
+                        );
+</pre>
+<ul>
+<li>TimerContext Optional parameter to
+<font class="ParamNameDesc">TimerApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>ResumeTimer If set, Power Management
+restores system to normal mode when timer is signaled.</li>
+</ul>
+<ul>
+<li>Period If zero, timer is set only once.
+Else will be set periodic in time intervals defined in <font class="ParamNameDesc">Period</font> value (in <i>100ms</i> units).</li>
+</ul>
+<ul>
+<li>PreviousState Optional pointer to value
+receiving state of Timer Object before <b><u>NtSetTimer</u></b>
+call.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCancelTimer.html">
+NtCancelTimer</a><br/>
+</dd>
+<dd><a href="NtCreateTimer.html">
+NtCreateTimer</a><br/>
+</dd>
+<dd><a href="NtOpenTimer.html">
+NtOpenTimer</a><br/>
+</dd>
+<dd><a href="NtQueryTimer.html">
+NtQueryTimer</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

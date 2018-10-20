@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>MUTANT_BASIC_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 24 November</p>
+<br/>
+<div class="text">MUTANT_BASIC_INFORMATION</div>
+<div class="highlight">MUTANT_BASIC_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _MUTANT_BASIC_INFORMATION {
+<br/>
+
+
+  LONG                    <i><font color="blue">CurrentCount</font></i>;
+  BOOLEAN                 <i><font color="blue">OwnedByCaller</font></i>;
+  BOOLEAN                 <i><font color="blue">AbandonedState</font></i>;
+
+
+
+} MUTANT_BASIC_INFORMATION, *PMUTANT_BASIC_INFORMATION;
+</pre>
+<br/>
+<br/>
+<pre>Use <b>MUTANT_BASIC_INFORMATION</b> as a buffer in <a href="NtQueryMutant.html">NtQueryMutant</a> call.
+
+</pre>
+<hr width="40%"/>
+<pre>
+</pre>
+<h6><font color="#FF0000" size="12">CurrentCount</font>
+</h6>
+<pre>If <font class="ParamNameDesc">CurrentCount</font> is less than zero, mutant is signaled.
+
+</pre>
+<h6>OwnedByCaller</h6>
+<pre>It's <i>TRUE </i>if mutant is signaled by caller's thread.
+
+</pre>
+<h6>AbandonedState</h6>
+<pre>Is set when thread terminates without call <a href="NtReleaseMutant.html">NtReleaseMutant</a>.
+
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateMutant.html">
+NtCreateMutant</a><br/>
+</dd>
+<dd><a href="NtOpenMutant.html">
+NtOpenMutant</a><br/>
+</dd>
+<dd><a href="NtQueryMutant.html">
+NtQueryMutant</a><br/>
+</dd>
+<dd><a href="NtReleaseMutant.html">
+NtReleaseMutant</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

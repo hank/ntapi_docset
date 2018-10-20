@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetDefaultHardErrorPort</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 4 February</p>
+<br/>
+<div class="text">NtSetDefaultHardErrorPort</div>
+<div class="highlight">NtSetDefaultHardErrorPort</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetDefaultHardErrorPort(
+<br/>
+
+  IN HANDLE               <i><font color="blue">PortHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>NtSetDefaultHardErrorPort</u></b> is typically called only
+once. After call, kernel set <b>BOOLEAN</b> flag named
+<em>_ExReadyForErrors</em> to <b>TRUE</b>, and all other tries to
+change default port are broken with <b>STATUS_UNSUCCESSFUL</b>
+error code.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>PortHandle <b>HANDLE</b> to named Port
+Object.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Listener of default HardError port receive <a href="HARDERROR_MSG.html">HARDERROR_MSG</a>
+<i>LPC</i> messages when any process call <a href="NtRaiseHardError.html">NtRaiseHardError</a>
+function.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+<dd>Privileges: <strong class="req">SE_TCB_PRIVILEGE</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="HARDERROR_MSG.html">HARDERROR_MSG</a><br/>
+</dd>
+<dd><a href="NtRaiseHardError.html">NtRaiseHardError</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

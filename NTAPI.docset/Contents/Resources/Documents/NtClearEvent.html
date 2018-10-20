@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtClearEvent</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br/>
+<div class="text">NtClearEvent</div>
+<div class="highlight">NtClearEvent</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtClearEvent(
+<br/>
+
+  IN HANDLE               <i><font color="blue">EventHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>EventHandle <b>HANDLE</b> to Event
+Object opened with <b>EVENT_MODIFY_STATE</b> attribute.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+There're no functional difference between
+<b><u>NtClearEvent</u></b> and <a href="NtResetEvent.html">NtResetEvent</a>, but the first works faster
+(see <a href="NtResetEvent.html">
+NtResetEvent</a>).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateEvent.html">
+NtCreateEvent</a><br/>
+</dd>
+<dd><a href="NtOpenEvent.html">
+NtOpenEvent</a><br/>
+</dd>
+<dd><a href="NtResetEvent.html">
+NtResetEvent</a><br/>
+</dd>
+<dd><a href="NtSetEvent.html">
+NtSetEvent</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtImpersonateThread</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 15 February</p>
+<br/>
+<div class="text">NtImpersonateThread</div>
+<div class="highlight">NtImpersonateThread</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtImpersonateThread(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ThreadHandle</font></i>,
+  IN HANDLE               <i><font color="blue">ThreadToImpersonate</font></i>,
+  IN PSECURITY_QUALITY_OF_SERVICE <i><font color="blue">SecurityQualityOfService</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtImpersonateThread</u></b> assigns one thread's
+token to another. If source thread don't have associated Token
+Object, function use process'es token to impersonate destination
+thread.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>ThreadHandle <b>HANDLE</b> to source
+Thread Object.</li>
+</ul>
+<ul>
+<li>ThreadToImpersonate <b>HANDLE</b> to
+destination Thread Object opened with <b>THREAD_IMPERSONATE</b>
+access.</li>
+</ul>
+<ul>
+<li>SecurityQualityOfService Pointer to
+<a href="SECURITY_QUALITY_OF_SERVICE.html">SECURITY_QUALITY_OF_SERVICE</a>
+structure filled by user.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateThread.html">
+NtCreateThread</a><br/>
+</dd>
+<dd><a href="NtImpersonateClientOfPort.html">
+NtImpersonateClientOfPort</a><br/>
+</dd>
+<dd><a href="NtOpenThread.html">
+NtOpenThread</a><br/>
+</dd>
+<dd><a href="SECURITY_QUALITY_OF_SERVICE.html">SECURITY_QUALITY_OF_SERVICE</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtReadRequestData</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 29 January</p>
+<br/>
+<div class="text">NtReadRequestData</div>
+<div class="highlight">NtReadRequestData</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtReadRequestData(
+<br/>
+
+  IN HANDLE               <i><font color="blue">PortHandle</font></i>,
+  IN PLPC_MESSAGE         <i><font color="blue">Request</font></i>,
+  IN ULONG                <i><font color="blue">DataIndex</font></i>,
+  OUT PVOID               <i><font color="blue">Buffer</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  OUT PULONG              <i><font color="blue">ResultLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>PortHandle <b>HANDLE</b> to Port Object
+opened in a result of call <a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a>.</li>
+</ul>
+<ul>
+<li>Request </li>
+</ul>
+<ul>
+<li>DataIndex </li>
+</ul>
+<ul>
+<li>Buffer </li>
+</ul>
+<ul>
+<li>Length </li>
+</ul>
+<ul>
+<li>ResultLength <br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="LPC_MESSAGE.html">
+LPC_MESSAGE</a><br/>
+</dd>
+<dd><a href="NtAcceptConnectPort.html">
+NtAcceptConnectPort</a><br/>
+</dd>
+<dd><a href="NtWriteRequestData.html">NtWriteRequestData</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

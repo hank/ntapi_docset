@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtRemoveIoCompletion</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO7, 29 April</p>
+<br/>
+<div class="text">NtRemoveIoCompletion</div>
+<div class="highlight">NtRemoveIoCompletion</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtRemoveIoCompletion(
+<br/>
+
+  IN HANDLE               <i><font color="blue">IoCompletionHandle</font></i>,
+  OUT PULONG              <i><font color="blue">CompletionKey</font></i>,
+  OUT PULONG              <i><font color="blue">CompletionValue</font></i>,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">Timeout</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtRemoveIoCompletion</u></b> is one of waiting calls
+and it's finished when at least one completion record will be
+avaiable in specified <i>Io Completion</i> object. Records are
+added when I/O operation is finished, but previously <i>File</i>
+object have to been associated with <i>Io Completion</i>
+object.<br/>
+Association between <i>File</i> and <i>Io Completion</i> objects is
+maded by call to <a href="NtSetInformationFile.html">
+NtSetInformationFile</a> with <a href="FILE_INFORMATION_CLASS.html#FileCompletionInformation">
+FileCompletionInformation</a> information class. Additionally every
+assotiation have to have unique <b>Key</b> defined. This
+functionality allows to use one <i>Io Completion</i> object with
+different <i>File</i> objects.<br/>
+Every one <i>File</i> object can have only one <i>Io Completion</i>
+associated with it.<br/>
+I/O operations won't be appended to <i>Io Completion</i> object
+except file operations will be called with non-zero value in
+<font class="ParamNameDesc">ApcContext</font> parameters.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>IoCompletionHandle <b>HANDLE</b> to
+previously created or opened <i>Io Completion</i> object.</li>
+</ul>
+<ul>
+<li>CompletionKey Receives completion
+<b>Key</b> informing about <i>File</i> object who finishes
+I/O.</li>
+</ul>
+<ul>
+<li>CompletionValue Value of <font class="ParamNameDesc">ApcContext</font> file operation parameter.
+<font class="ParamNameDesc">CompletionValue</font> informs about
+operation finished.</li>
+</ul>
+<ul>
+<li>IoStatusBlock Io status of finished
+operation.</li>
+</ul>
+<ul>
+<li>Timeout Optionally pointer to time out
+value.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="FILE_COMPLETION_INFORMATION.html">FILE_COMPLETION_INFORMATION</a><br/>
+</dd>
+<dd><a href="FILE_INFORMATION_CLASS.html">
+FILE_INFORMATION_CLASS</a><br/>
+</dd>
+<dd><a href="NtCreateIoCompletion.html">
+NtCreateIoCompletion</a><br/>
+</dd>
+<dd><a href="NtOpenIoCompletion.html">
+NtOpenIoCompletion</a><br/>
+</dd>
+<dd><a href="NtReadFile.html">
+NtReadFile</a><br/>
+</dd>
+<dd><a href="NtSetInformationFile.html">
+NtSetInformationFile</a><br/>
+</dd>
+<dd><a href="NtSetIoCompletion.html">
+NtSetIoCompletion</a><br/>
+</dd>
+<dd><a href="NtWriteFile.html">
+NtWriteFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

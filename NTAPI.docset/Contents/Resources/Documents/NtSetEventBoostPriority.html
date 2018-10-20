@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetEventBoostPriority</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO7, 29 April</p>
+<br/>
+<div class="text">NtSetEventBoostPriority</div>
+<div class="highlight">NtSetEventBoostPriority</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetEventBoostPriority(
+<br/>
+
+  IN HANDLE               <i><font color="blue">EventHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtSetEventPriorityBoost</u></b> was added in
+<i>Windows XP</i> system. Has the same functionality as <a href="NtSetEvent.html">
+NtSetEvent</a>, but thread that is waiting on specified
+<i>Event</i> will be executed immediatelly after context switch,
+regardless of waiting thread's priority.
+
+<ul>
+<li>EventHandle <b>HANDLE</b> to previously
+created or opened <i>Event</i> object. Note that Event has to be
+created with <a href="EVENT_TYPE.html">
+EVENT_TYPE</a> set to <b><i>SynchronizationEvent</i></b> (automatic
+reset), in other cases function will return with error.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="EVENT_TYPE.html">
+EVENT_TYPE</a><br/>
+</dd>
+<dd><a href="NtCreateEvent.html">
+NtCreateEvent</a><br/>
+</dd>
+<dd><a href="NtOpenEvent.html">
+NtOpenEvent</a><br/>
+</dd>
+<dd><a href="NtSetEvent.html">
+NtSetEvent</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtDebugActiveProcess</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO9, 23 March</p>
+<br/>
+<div class="text">NtDebugActiveProcess</div>
+<div class="highlight">NtDebugActiveProcess</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtDebugActiveProcess(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN HANDLE               <i><font color="blue">DebugObjectHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtDebugActiveProcess</u></b> is used to attach
+<i>Debug Object</i> to any non-debuged process.<br/>
+<ul>
+<li>ProcessHandle <b>HANDLE</b> to process
+being debugged (opened with enough access rigths - see <a href="NtOpenProcess.html">
+NtOpenProcess</a>).</li>
+</ul>
+<ul>
+<li>DebugObjectHandle <b>HANDLE</b> to
+previously created <i>Debug Object</i>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateDebugObject.html">
+NtCreateDebugObject</a><br/>
+</dd>
+<dd><a href="NtOpenProcess.html">
+NtOpenProcess</a><br/>
+</dd>
+<dd><a href="NtRemoveProcessDebug.html">
+NtRemoveProcessDebug</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

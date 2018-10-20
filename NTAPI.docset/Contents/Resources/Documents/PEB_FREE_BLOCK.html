@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>PEB_FREE_BLOCK</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 2 March</p>
+<br/>
+<div class="text">PEB_FREE_BLOCK</div>
+<div class="highlight">PEB_FREE_BLOCK</div>
+<br/>
+<pre class="FnDefinition">typedef struct _PEB_FREE_BLOCK {
+<br/>
+
+  PEB_FREE_BLOCK          <i><font color="blue">*Next</font></i>;
+  ULONG                   <i><font color="blue">Size</font></i>;
+
+} PEB_FREE_BLOCK, *PPEB_FREE_BLOCK;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>PEB_FREE_BLOCK</u></b> is used internally in
+<a href="PEB.html">PEB</a> <i>(Process Enviroment Block)</i>
+structure for describe free blocks in memory allocated for <a href="PEB.html">PEB</a>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>*Next Pointer to next free block.</li>
+</ul>
+<ul>
+<li>Size Size of block, in bytes.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="PEB.html">PEB</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

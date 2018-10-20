@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateTimer</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 7 January</p>
+<br/>
+<div class="text">NtCreateTimer</div>
+<div class="highlight">NtCreateTimer</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateTimer(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">TimerHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN TIMER_TYPE           <i><font color="blue">TimerType</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>TimerHandle Result of call -
+<b>HANDLE</b> to Timer Object.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access mask for
+<font class="ParamNameDesc">TimerHandle</font>. Can be set of (from
+<b><i>&lt;WinNT.h&gt;</i></b>):</li>
+</ul>
+<ul type="circle">
+<li><b>TIMER_QUERY_STATE</b>
+</li>
+<li><b>TIMER_MODIFY_STATE</b>
+</li>
+<li><b>TIMER_ALL_ACCESS</b>
+</li>
+</ul>
+<ul>
+<li>ObjectAttributes Optional name of Timer
+Object.</li>
+</ul>
+<ul>
+<li>TimerType Can be
+<b><u>NotificationTimer</u></b> or
+<b><u>SynchronizationTimer</u></b> (enumerated type definition from
+<b><i>&lt;ntdef.h&gt;</i></b>). See also <a href="EVENT_TYPE.html">
+EVENT_TYPE</a>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="EVENT_TYPE.html">
+EVENT_TYPE</a><br/>
+</dd>
+<dd><a href="NtOpenTimer.html">NtOpenTimer</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateIoCompletion</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 18 February</p>
+<br/>
+<div class="text">NtCreateIoCompletion</div>
+<div class="highlight">NtCreateIoCompletion</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateIoCompletion(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">IoCompletionHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">NumberOfConcurrentThreads</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtCreateIoCompletion</u></b> creates IO Completion
+Object. IO Completion Object is used for waiting on pending IO
+operation (reading or writing) in multi-process file access. It
+contains more informations about IO operation than synchronization
+event or <i>APC Routine</i>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>IoCompletionHandle Result of call -
+<b>HANDLE</b> to newly created IO Completion Object.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access mask for created
+<b>HANDLE</b>. Can be combination of:</li>
+</ul>
+<ul>
+<li><b>IO_COMPLETION_QUERY_STATE</b>
+</li>
+<li><b>IO_COMPLETION_MODIFY_STATE</b>
+</li>
+<li><b>IO_COMPLETION_ALL_ACCESS</b>
+</li>
+</ul>
+<ul>
+<li>ObjectAttributes Optionally contains
+object name, in Objects Namespace.</li>
+</ul>
+<ul>
+<li>NumberOfConcurrentThreads Number of
+threads accessing File Object associated with IO Completion. If
+Zero, system reserves memory for number of threads equal to current
+nymber of processes.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="FILE_INFORMATION_CLASS.html">
+FILE_INFORMATION_CLASS</a><br/>
+</dd>
+<dd><a href="NtOpenIoCompletion.html">
+NtOpenIoCompletion</a><br/>
+</dd>
+<dd><a href="NtQueryIoCompletion.html">
+NtQueryIoCompletion</a><br/>
+</dd>
+<dd><a href="NtRemoveIoCompletion.html">
+NtRemoveIoCompletion</a><br/>
+</dd>
+<dd><a href="NtSetInformationFile.html">
+NtSetInformationFile</a><br/>
+</dd>
+<dd><a href="NtSetIoCompletion.html">
+NtSetIoCompletion</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

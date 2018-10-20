@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SECTION_IMAGE_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO0, 26 November</p>
+<br/>
+<div class="text">SECTION_IMAGE_INFORMATION</div>
+<div class="highlight">SECTION_IMAGE_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _SECTION_IMAGE_INFORMATION {
+<br/>
+
+  PVOID                   <i><font color="blue">EntryPoint</font></i>;
+  ULONG                   <i><font color="blue">StackZeroBits</font></i>;
+  ULONG                   <i><font color="blue">StackReserved</font></i>;
+  ULONG                   <i><font color="blue">StackCommit</font></i>;
+  ULONG                   <i><font color="blue">ImageSubsystem</font></i>;
+  WORD                    <i><font color="blue">SubSystemVersionLow</font></i>;
+  WORD                    <i><font color="blue">SubSystemVersionHigh</font></i>;
+  ULONG                   <i><font color="blue">Unknown1</font></i>;
+  ULONG                   <i><font color="blue">ImageCharacteristics</font></i>;
+  ULONG                   <i><font color="blue">ImageMachineType</font></i>;
+  ULONG                   <i><font color="blue">Unknown2[3]</font></i>;
+
+} SECTION_IMAGE_INFORMATION, *PSECTION_IMAGE_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>SECTION_IMAGE_INFORMATION</u></b> is returned as a
+result of call <a href="NtQuerySection.html">
+NtQuerySection</a> with <a href="SECTION_INFORMATION_CLASS.html#SectionImageInformation">
+SectionImageInformation</a> information class. System automatically
+check type and contents of File Object passed as a parameter to
+function <a href="NtCreateSection.html">
+NtCreateSection</a>, and sets <b>SEC_IMAGE</b> bit on Section
+Attributes.<br/>
+<br/>
+This structure is very useful in process creation, becouse caller
+can check most interesting of <i>PE Header</i> fields just before
+call to <a href="NtCreateProcess.html">
+NtCreateProcess</a> and without mapping section to target
+process'es memory.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>EntryPoint Image's entry point.</li>
+</ul>
+<ul>
+<li>StackZeroBits Number of bits from left
+side of stack address must be set to zero. It means maximum stack's
+address in process memory.</li>
+</ul>
+<ul>
+<li>StackReserved Total size of stack, in
+bytes.</li>
+</ul>
+<ul>
+<li>StackCommit Initially commited stack's
+block size.</li>
+</ul>
+<ul>
+<li>ImageSubsystem One of
+<b>IMAGE_SUBSYSTEM_*</b> descripted in <i>Microsoft SDK</i> and
+avaiable in <b><i>&lt;winnt.h&gt;</i></b> header file.</li>
+</ul>
+<ul>
+<li>SubSystemVersionLow Minor version
+number of subsystem.</li>
+</ul>
+<ul>
+<li>SubSystemVersionHigh Major version
+number of subsystem.</li>
+</ul>
+<ul>
+<li>Unknown1 <b><i>(?)</i></b></li>
+</ul>
+<ul>
+<li>ImageCharacteristics DLL
+Characteristics.</li>
+</ul>
+<ul>
+<li>ImageMachineType One of
+<b>IMAGE_FILE_MACHINE_*</b>.</li>
+</ul>
+<ul>
+<li>Unknown2[3] <b><i>(?)</i></b><br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateProcess.html">
+NtCreateProcess</a><br/>
+</dd>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a><br/>
+</dd>
+<dd><a href="NtOpenSection.html">
+NtOpenSection</a><br/>
+</dd>
+<dd><a href="NtQuerySection.html">
+NtQuerySection</a><br/>
+</dd>
+<dd><a href="SECTION_BASIC_INFORMATION.html">SECTION_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="SECTION_INFORMATION_CLASS.html">
+SECTION_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

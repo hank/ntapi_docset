@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQuerySystemEnvironmentValue</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 3 December</p>
+<br/>
+<div class="text">NtQuerySystemEnvironmentValue</div>
+<div class="highlight">NtQuerySystemEnvironmentValue</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQuerySystemEnvironmentValue(
+<br/>
+
+  IN PUNICODE_STRING      <i><font color="blue">VariableName</font></i>,
+  OUT PWCHAR              <i><font color="blue">Value</font></i>,
+  IN ULONG                <i><font color="blue">ValueBufferLength</font></i>,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<pre>
+Seems not works on <i>NT 4.0 SP6</i>. Control Panel applet query and set System Environment values by <b>Rtl...Environment</b> functions or directly by registry.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong></dd>
+<dd>Privilege: <strong class="req">SE_SYSTEM_ENVIRONMENT_NAME</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="RtlQueryEnvironmentVariable_U.html">
+RtlQueryEnvironmentVariable_U</a><br/>
+</dd>
+<dd><a href="RtlSetEnvironmentVariable.html">
+RtlSetEnvironmentVariable</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtLockFile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 6 January</p>
+<br/>
+<div class="text">NtLockFile</div>
+<div class="highlight">NtLockFile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtLockFile(
+<br/>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">LockGrantedEvent</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ByteOffset</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">Length</font></i>,
+  IN PULONG               <i><font color="blue">Key</font></i>,
+  IN BOOLEAN              <i><font color="blue">ReturnImmediately</font></i>,
+  IN BOOLEAN              <i><font color="blue">ExclusiveLock</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>FileHandle <b>HANDLE</b> to File Object
+opened with <b>FILE_READ_DATA</b> access.</li>
+</ul>
+<ul>
+<li>LockGrantedEvent Optional <b>HANDLE</b>
+to Event Object, whitch is signaled when lock is created (typically
+used with <font class="ParamNameDesc">ReturnImmediately</font>
+parameter set to <b>TRUE</b>).</li>
+</ul>
+<ul>
+<li>ApcRoutine APC routine executed when
+lock is granted.</li>
+</ul>
+<ul>
+<li>ApcContext Optional parameter for
+<font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>IoStatusBlock IO result of call.</li>
+</ul>
+<ul>
+<li>ByteOffset Offset (in bytes) to begin
+of file region to lock.</li>
+</ul>
+<ul>
+<li>Length Length of region to lock, in
+bytes.</li>
+</ul>
+<ul>
+<li>Key Pointer to user's defined 4-bytes
+key associated with this lock. It can be used in multi-thread
+process to allow reading or writing data only for one specified
+thread, whitch known <font class="ParamNameDesc">Key</font>
+value.</li>
+</ul>
+<ul>
+<li>ReturnImmediately If <b>TRUE</b>,
+function returns immediately. Caller is informed about lock
+creation by <font class="ParamNameDesc">LockGrantedEvent</font> or
+by executing <font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>ExclusiveLock If set, all read and
+write operation are denied for other processes. If not, only write
+operation is denied.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateFile.html">
+NtCreateFile</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtReadFile.html">
+NtReadFile</a><br/>
+</dd>
+<dd><a href="NtReadFileScatter.html">NtReadFileScatter</a><br/>
+</dd>
+<dd><a href="NtUnlockFile.html">
+NtUnlockFile</a><br/>
+</dd>
+<dd><a href="NtWriteFile.html">
+NtWriteFile</a><br/>
+</dd>
+<dd><a href="NtWriteFileGather.html">NtWriteFileGather</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

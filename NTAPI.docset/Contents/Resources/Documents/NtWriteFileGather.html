@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtWriteFileGather</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 February</p>
+<br/>
+<div class="text">NtWriteFileGather</div>
+<div class="highlight">NtWriteFileGather</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtWriteFileGather(
+<br/>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN FILE_SEGMENT_ELEMENT <i><font color="blue">SegmentArray</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ByteOffset</font></i>,
+  IN PULONG               <i><font color="blue">Key</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtWriteFileGather</u></b> writes specified block of
+file with data from memory pages. See <a href="NtReadFileScatter.html">
+NtReadFileScatter</a> for more information.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>FileHandle <b>HANDLE</b> to File Object
+opened with <b>FILE_WRITE_DATA</b> access and
+<b>FILE_NO_INTERMEDIATE_BUFFERING</b> open option.<br/>
+<font color="red">Warring:</font> You
+cannot use File Object opened with <b>FILE_APPEND_DATA</b>
+access.</li>
+</ul>
+<ul>
+<li>Event <b>HANDLE</b> to Event Object
+signaled when writing will finish. Function always use asynchronous
+writing operation, so caller should define <font class="ParamNameDesc">Event</font> or <font class="ParamNameDesc">ApcRoutine</font> parameter.</li>
+</ul>
+<ul>
+<li>ApcRoutine Pointer to user's <i>APC
+Routine</i>.</li>
+</ul>
+<ul>
+<li>ApcContext Parameter for <font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>IoStatusBlock IO result of call.</li>
+</ul>
+<ul>
+<li>SegmentArray Array of
+<b>FILE_SEGMENT_ELEMENT</b> elements pointing to memory pages to
+write. Last array element must be <i>NULL</i>.</li>
+</ul>
+<ul>
+<li>Length Number of bytes to write.</li>
+</ul>
+<ul>
+<li>ByteOffset Pointer to
+<b>LARGE_INTEGER</b> value indicates starting position for
+write.</li>
+</ul>
+<ul>
+<li>Key Pointer to user's defined key, used
+when file is locked (see <a href="NtLockFile.html">
+NtLockFile</a>).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateFile.html">
+NtCreateFile</a><br/>
+</dd>
+<dd><a href="NtLockFile.html">
+NtLockFile</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtReadFileScatter.html">
+NtReadFileScatter</a><br/>
+</dd>
+<dd><a href="NtWriteFile.html">
+NtWriteFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

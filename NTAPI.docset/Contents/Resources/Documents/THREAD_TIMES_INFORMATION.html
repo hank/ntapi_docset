@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>THREAD_TIMES_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 19 December</p>
+<br/>
+<div class="text">THREAD_TIMES_INFORMATION</div>
+<div class="highlight">THREAD_TIMES_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _THREAD_TIMES_INFORMATION {
+<br/>
+
+
+  LARGE_INTEGER           <i><font color="blue">CreationTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">ExitTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">KernelTime</font></i>;
+  LARGE_INTEGER           <i><font color="blue">UserTime</font></i>;
+
+
+
+} THREAD_TIMES_INFORMATION, *PTHREAD_TIMES_INFORMATION;
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>CreationTime</h6>
+<pre>Time of thread creation.
+
+</pre>
+<h6>ExitTime</h6>
+<pre>Time of thread termination.
+
+</pre>
+<h6>KernelTime</h6>
+<pre>Time that thread spent in <i>KernelMode</i>.
+
+</pre>
+<h6>UserTime</h6>
+<pre>Time that thread spent in <i>UserMode</i>.
+
+</pre>
+<hr width="40%"/>
+<pre>
+Structure is used with <a href="THREAD_INFORMATION_CLASS.html#ThreadTimes">ThreadTimes</a> information class in <a href="NtQueryInformationThread.html">NtQueryInformationThread</a> call.
+
+
+</pre>
+<font color="#FF0000" size="12"><br/>
+<br/></font>
+<dl>
+<dt class="Require"><font color="#FF0000" size="12">Documented
+by:</font>
+</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQueryInformationThread.html">
+NtQueryInformationThread</a><br/>
+</dd>
+<dd><a href="THREAD_INFORMATION_CLASS.html">
+THREAD_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

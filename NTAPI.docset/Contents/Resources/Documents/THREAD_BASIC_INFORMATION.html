@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>THREAD_BASIC_INFORMATION</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 19 December</p>
+<br/>
+<div class="text">THREAD_BASIC_INFORMATION</div>
+<div class="highlight">THREAD_BASIC_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _THREAD_BASIC_INFORMATION {
+<br/>
+
+
+  NTSTATUS                <i><font color="blue">ExitStatus</font></i>;
+  PVOID                   <i><font color="blue">TebBaseAddress</font></i>;
+  CLIENT_ID               <i><font color="blue">ClientId</font></i>;
+  KAFFINITY               <i><font color="blue">AffinityMask</font></i>;
+  KPRIORITY               <i><font color="blue">Priority</font></i>;
+  KPRIORITY               <i><font color="blue">BasePriority</font></i>;
+
+
+
+} THREAD_BASIC_INFORMATION, *PTHREAD_BASIC_INFORMATION;
+</pre>
+<br/>
+<br/>
+<ul>
+<li>ExitStatus Thread exit status. If
+thread is not terminated, it has <b>STATUS_PENDING</b> value. See
+also <i>Win32 API</i> <b><u>GetExitCodeThread</u></b>.</li>
+</ul>
+<ul>
+<li>TebBaseAddress Address of <a href="TEB.html">TEB</a> structure for specified thread. See also
+<a href="NtCurrentTeb.html">NtCurrentTeb</a>.</li>
+</ul>
+<ul>
+<li>ClientId Unique process id and thread
+id.</li>
+</ul>
+<ul>
+<li>AffinityMask Thread affinity mask.
+There are no <i>Win32</i> call GetThreadAffinityMask, but there's
+function <b><u>SetThreadAffinityMask</u></b> that's use
+<font class="ParamNameDesc">AffinityMask</font> value. See also
+<a href="THREAD_INFORMATION_CLASS.html#ThreadAffinityMask">
+ThreadAffinityMask</a> information class.</li>
+</ul>
+<ul>
+<li>Priority I'm not sure...</li>
+</ul>
+<ul>
+<li>BasePriority Thread base priority. Used
+by <b><i>Kernel32.dll</i></b> in function
+<b><u>GetThreadPriority</u></b>. See also <a href="THREAD_INFORMATION_CLASS.html#ThreadBasePriority">
+ThreadBasePriority</a> information class.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Structure is used with <a href="THREAD_INFORMATION_CLASS.html#ThreadBasicInformation">
+ThreadBasicInformation</a> information class in <a href="NtQueryInformationThread.html">
+NtQueryInformationThread</a> call.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQueryInformationThread.html">
+NtQueryInformationThread</a><br/>
+</dd>
+<dd><a href="THREAD_INFORMATION_CLASS.html">
+THREAD_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtLoadDriver</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<br/>
+<div class="text">NtLoadDriver</div>
+<div class="highlight">NtLoadDriver</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtLoadDriver(
+<br/>
+
+  IN PUNICODE_STRING <i><font color="blue">DriverServiceName</font></i> );
+
+</pre>
+<br/>
+<br/>
+<h6>DriverServiceName</h6>
+<dl>
+<dd class="reg">Registry path in system format. Path must begin
+with <font color="red">"\\registry\\machine\\SYSTEM\\CurrentControlSet\\Services\\..."</font>
+where <font color="red">"..."</font> is driver symbolic name.</dd>
+<dd class="reg">Key must have at least 2 values:<br/></dd>
+<dd class="reg">
+<ul>
+<li><font color="red">"ImagePath"</font> System path to file, in
+UNICODE format
+
+<dl>
+<dd class="reg">
+<ul>
+<li><font color="red">"Type"</font> Set to 1.</li>
+</ul>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+<dd class="req">Privilege:
+<strong>SeLoadDriverPrivilege</strong></dd>
+<dd><br/>
+<br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">See also:</div>
+<a href="ntunloaddriver.html">NtUnloadDriver</a><br/>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

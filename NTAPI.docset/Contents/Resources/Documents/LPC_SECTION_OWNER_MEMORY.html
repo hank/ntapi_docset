@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>LPC_SECTION_OWNER_MEMORY</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 27 January</p>
+<br/>
+<div class="text">LPC_SECTION_OWNER_MEMORY</div>
+<div class="highlight">LPC_SECTION_OWNER_MEMORY</div>
+<br/>
+<pre class="FnDefinition">typedef struct _LPC_SECTION_OWNER_MEMORY {
+<br/>
+
+  ULONG                   <i><font color="blue">Length</font></i>;
+  HANDLE                  <i><font color="blue">SectionHandle</font></i>;
+  ULONG                   <i><font color="blue">OffsetInSection</font></i>;
+  ULONG                   <i><font color="blue">ViewSize</font></i>;
+  PVOID                   <i><font color="blue">ViewBase</font></i>;
+  PVOID                   <i><font color="blue">OtherSideViewBase</font></i>;
+
+} LPC_SECTION_OWNER_MEMORY, *PLPC_SECTION_OWNER_MEMORY;
+</pre>
+<br/>
+<br/>
+<br/>
+This structure is used by <i>LPC</i> connection functions by
+Section Object creator side (whatever it is client of port or
+server). See <a href="LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a> for more information.
+
+<ul>
+<li>Length Length of structure.</li>
+</ul>
+<ul>
+<li>SectionHandle <b>HANDLE</b> to
+SectionObject mapped on both sides of <i>LPC</i> connection.</li>
+</ul>
+<ul>
+<li>OffsetInSection </li>
+</ul>
+<ul>
+<li>ViewSize Receives size of mapped
+window.</li>
+</ul>
+<ul>
+<li>ViewBase Receives base address of
+mapped window.</li>
+</ul>
+<ul>
+<li>OtherSideViewBase Receives base address
+of mapped window for other <i>LPC</i> connection side.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="LPC_SECTION_MEMORY.html">
+LPC_SECTION_MEMORY</a><br/>
+</dd>
+<dd><a href="NtAcceptConnectPort.html">NtAcceptConnectPort</a><br/>
+</dd>
+<dd><a href="NtConnectPort.html">NtConnectPort</a><br/>
+</dd>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

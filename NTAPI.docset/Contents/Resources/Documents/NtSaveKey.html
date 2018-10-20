@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSaveKey</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 19 October</p>
+<br/>
+<div class="text">NtSaveKey</div>
+<div class="highlight">NtSaveKey</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSaveKey(
+<br/>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN HANDLE               <i><font color="blue">FileHandle</font></i> );
+
+</pre>
+<br/>
+<br/>
+<h6>KeyHandle</h6>
+<pre>
+</pre>
+<div class="reg">
+</div>
+<pre>
+</pre>
+<h6>FileHandle</h6>
+<pre>
+</pre>
+<div class="reg"><b>HANDLE</b> to any file created with write
+access. Before use <font class="ParamNameDesc">FileHandle</font> in
+other registry function without closing it, call <a href="NtFlushKey.html">NtFlushKey</a> with <font class="ParamNameDesc">KeyHandle</font> as param.</div>
+<pre>
+
+
+</pre>
+<br/>
+<br/>
+<div class="Require">Requirements:</div>
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+<dd class="req">Privileges: <strong>SE_BACKUP_NAME</strong></dd>
+<dd><br/>
+<br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">See also:</div>
+<a href="NtOpenKey.html">NtOpenKey</a><br/>
+<a href="NtRestoreKey.html">NtRestoreKey</a><br/>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtAdjustPrivilegesToken</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 9 February</p>
+<br/>
+<div class="text">NtAdjustPrivilegesToken</div>
+<div class="highlight">NtAdjustPrivilegesToken</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtAdjustPrivilegesToken(
+<br/>
+
+  IN HANDLE               <i><font color="blue">TokenHandle</font></i>,
+  IN BOOLEAN              <i><font color="blue">DisableAllPrivileges</font></i>,
+  IN PTOKEN_PRIVILEGES    <i><font color="blue">TokenPrivileges</font></i>,
+  IN ULONG                <i><font color="blue">PreviousPrivilegesLength</font></i>,
+  OUT PTOKEN_PRIVILEGES   <i><font color="blue">PreviousPrivileges</font></i> OPTIONAL,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtAdjustPrivilegesToken</u></b> is used to modify
+state of avaiable token's privileges, and it's descripted also in
+<i>Microsoft SDK</i> help as
+<b><u>AdjustTokenPrivileges</u></b>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>TokenHandle <b>HANDLE</b> to Token
+Object opened with <b>TOKEN_ADJUST_PRIVILEGES</b> access. If
+<font class="ParamNameDesc">PreviousPrivileges</font> parameter is
+non-NULL, also <b>TOKEN_QUERY</b> access is required.</li>
+</ul>
+<ul>
+<li>DisableAllPrivileges If set, all
+accessable privileges are disabled, and rest of parameters below
+are ignored.</li>
+</ul>
+<ul>
+<li>TokenPrivileges Pointer to <a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a> structure containing
+array of privileges to adjust.</li>
+</ul>
+<ul>
+<li>PreviousPrivilegesLength Length of
+<font class="ParamNameDesc">PreviousPrivileges</font> buffer, in
+bytes.</li>
+</ul>
+<ul>
+<li>PreviousPrivileges Optionally pointer
+to <a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a> structure
+filled by function with previous state of privileges specified by
+<font class="ParamNameDesc">TokenPrivileges</font> array.</li>
+</ul>
+<ul>
+<li>RequiredLength If <font class="ParamNameDesc">PreviousPrivileges</font> buffer was to small, this
+parameter point to required size.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAdjustGroupsToken.html">NtAdjustGroupsToken</a><br/>
+</dd>
+<dd><a href="NtCreateToken.html">NtCreateToken</a><br/>
+</dd>
+<dd><a href="NtOpenProcessToken.html">
+NtOpenProcessToken</a><br/>
+</dd>
+<dd><a href="NtOpenThreadToken.html">
+NtOpenThreadToken</a><br/>
+</dd>
+<dd><a href="NtPrivilegeCheck.html">
+NtPrivilegeCheck</a><br/>
+</dd>
+<dd><a href="NtQueryInformationToken.html">NtQueryInformationToken</a><br/>
+</dd>
+<dd><a href="TOKEN_PRIVILEGES.html">TOKEN_PRIVILEGES</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

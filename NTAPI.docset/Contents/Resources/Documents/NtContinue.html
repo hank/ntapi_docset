@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtContinue</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 14 November</p>
+<br/>
+<div class="text">NtContinue</div>
+<div class="highlight">NtContinue</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtContinue(
+<br/>
+
+  IN PCONTEXT             <i><font color="blue">ThreadContext</font></i>,
+  IN BOOLEAN              <i><font color="blue">RaiseAlert</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>ThreadContext Pointer to <b>CONTEXT</b>
+structure for current thread.</li>
+</ul>
+<ul>
+<li>RaiseAlert If set, remove
+<i>Alerted</i> state from current Thread Object.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+You can use <b><u>NtContinue</u></b> after processing exception for
+continue executing thread. System uses <b><u>NtContinue</u></b>
+also in <b>APC</b> processing.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateThread.html">
+NtCreateThread</a><br/>
+</dd>
+<dd><a href="NtGetContextThread.html">
+NtGetContextThread</a><br/>
+</dd>
+<dd><a href="NtSetContextThread.html">
+NtSetContextThread</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

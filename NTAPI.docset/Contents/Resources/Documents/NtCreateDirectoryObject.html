@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCreateDirectoryObject</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 2O December</p>
+<br/>
+<div class="text">NtCreateDirectoryObject</div>
+<div class="highlight">NtCreateDirectoryObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtCreateDirectoryObject(
+<br/>
+
+  OUT PHANDLE             <i><font color="blue">DirectoryHandle</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>DirectoryHandle</h6>
+<pre>Pointer to newly created Directory Object after function call.
+
+</pre>
+<h6>DesiredAccess</h6>
+<pre>As defined in &lt;ntddk.h&gt; can be one of following:
+
+   #define <b>DIRECTORY_QUERY</b>                 (<i>0x0001</i>)
+   #define <b>DIRECTORY_TRAVERSE</b>              (<i>0x0002</i>)
+   #define <b>DIRECTORY_CREATE_OBJECT</b>         (<i>0x0004</i>)
+   #define <b>DIRECTORY_CREATE_SUBDIRECTORY</b>   (<i>0x0008</i>)
+   #define <b>DIRECTORY_ALL_ACCESS</b> (STANDARD_RIGHTS_REQUIRED | <i>0xF</i>)
+
+</pre>
+<h6>ObjectAttributes</h6>
+<pre>Pointer to object attributes. Structure must contain valid object name.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtOpenDirectoryObject.html">
+NtOpenDirectoryObject</a><br/>
+</dd>
+<dd><a href="NtQueryDirectoryObject.html">
+NtQueryDirectoryObject</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

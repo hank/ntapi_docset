@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>RtlImageRvaToVa</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 18 October</p>
+<br/>
+<div class="text">RtlImageRvaToVa</div>
+<div class="highlight">RtlImageRvaToVa</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+PVOID
+NTAPI
+<br/>
+RtlImageRvaToVa(
+<br/>
+
+  IN PIMAGE_NT_HEADERS    <i><font color="blue">NtHeaders</font></i>,
+  IN PVOID                <i><font color="blue">ModuleBase</font></i>,
+  IN ULONG                <i><font color="blue">Rva</font></i>,
+  IN OUT PIMAGE_SECTION_HEADER <i><font color="blue">pLastSection</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>Return value</h6>
+<pre>
+</pre>
+<div class="reg">It's pointer to vitrual memory in caller's address
+space.</div>
+<pre>
+<br/>
+<br/>
+</pre>
+<div class="reg">See <b>ImageRvaToVa</b> in
+<b>&lt;Dbghelp.h&gt;</b> for detailed description of use.</div>
+<pre>
+</pre>
+<br/>
+<br/>
+<div class="Require">Requirements:</div>
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+<dd><br/>
+<br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">See also:</div>
+<a href="LdrGetDllHandle.html">LdrGetDllHandle</a><br/>
+<a href="LdrLoadDll.html">
+LdrLoadDll</a><br/>
+<a href="RtlImageNtHeader.html">RtlImageNtHeader</a><br/>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

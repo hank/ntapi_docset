@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtSetSecurityObject</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 17 October</p>
+<br/>
+<div class="text">NtSetSecurityObject</div>
+<div class="highlight">NtSetSecurityObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtSetSecurityObject(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ObjectHandle</font></i>,
+  IN SECURITY_INFORMATION <i><font color="blue">SecurityInformationClass</font></i>,
+  IN PSECURITY_DESCRIPTOR <i><font color="blue">DescriptorBuffer</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtSetSecurityDescriptor</u></b> writes object's
+Security Descriptor.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>ObjectHandle <b>HANDLE</b> to object of
+any type. Must be opened with <b>WRITE_DAC</b> or
+<b>WRITE_OWNER</b> access dependly to <font class="ParamNameDesc">SecurityInformationClass</font> parameter.</li>
+</ul>
+<ul>
+<li>SecurityInformationClass See <a href="NtQuerySecurityObject.html">
+NtQuerySecurityObject</a> for possible values.</li>
+</ul>
+<ul>
+<li>DescriptorBuffer Pointer to user's
+allocated <a href="SECURITY_DESCRIPTOR.html">SECURITY_DESCRIPTOR</a> to set.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQuerySecurityObject.html">
+NtQuerySecurityObject</a><br/>
+</dd>
+<dd><a href="SECURITY_DESCRIPTOR.html">SECURITY_DESCRIPTOR</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

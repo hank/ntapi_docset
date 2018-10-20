@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>OBJECT_DATA_INFORMATION</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 22 November</p>
+<br/>
+<div class="text">OBJECT_DATA_INFORMATION</div>
+<div class="highlight">OBJECT_DATA_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _OBJECT_DATA_INFORMATION {
+<br/>
+
+
+  BOOLEAN                 <i><font color="blue">InheritHandle</font></i>;
+  BOOLEAN                 <i><font color="blue">ProtectFromClose</font></i>;
+
+
+
+} OBJECT_DATA_INFORMATION, *POBJECT_DATA_INFORMATION;
+</pre>
+<br/>
+<br/>
+<pre>Can be used with <a href="NtSetInformationObject.html">NtSetInformationObject</a>. <i>WIN32 API</i> uses this to protect Port Object from close in Process Creation routine.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Sven B. Schreiber</strong>
+</dd>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQueryObject.html">
+NtQueryObject</a><br/>
+</dd>
+<dd><a href="NtSetInformationObject.html">
+NtSetInformationObject</a><br/>
+</dd>
+<dd><a href="OBJECT_ALL_INFORMATION.html">OBJECT_ALL_INFORMATION</a><br/>
+</dd>
+<dd><a href="OBJECT_BASIC_INFORMATION.html">OBJECT_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="OBJECT_DATA_INFORMATION.html">OBJECT_DATA_INFORMATION</a><br/>
+</dd>
+<dd><a href="OBJECT_NAME_INFORMATION.html">OBJECT_NAME_INFORMATION</a><br/>
+</dd>
+<dd><a href="OBJECT_TYPE_INFORMATION.html">OBJECT_TYPE_INFORMATION</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

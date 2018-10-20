@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtReadFile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 15 January</p>
+<br/>
+<div class="text">NtReadFile</div>
+<div class="highlight">NtReadFile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtReadFile(
+<br/>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  OUT PVOID               <i><font color="blue">Buffer</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ByteOffset</font></i> OPTIONAL,
+  IN PULONG               <i><font color="blue">Key</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<i>(Also descripted in Win2000 DDK)</i>
+<ul>
+<li>FileHandle <b>HANDLE</b> to File Object
+opened with <b>FILE_READ_DATA</b> access.</li>
+</ul>
+<ul>
+<li>Event Optional <b>HANDLE</b> to Event
+Object signaled when reading is done.</li>
+</ul>
+<ul>
+<li>ApcRoutine User defined <i>APC</i>
+routine queued for execute after reading is done.</li>
+</ul>
+<ul>
+<li>ApcContext User parameter to
+<font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>IoStatusBlock Pointer to IO_STATUS
+structure received IO status of file reading.</li>
+</ul>
+<ul>
+<li>Buffer User-allocated buffer for readed
+data.</li>
+</ul>
+<ul>
+<li>Length Length of <font class="ParamNameDesc">Buffer</font>, in bytes.</li>
+</ul>
+<ul>
+<li>ByteOffset Offset from begining of
+file, in bytes.</li>
+</ul>
+<ul>
+<li>Key - ??? (In my opinion: use this, if
+you previously lock file, and now you want read it, but without
+unlocking).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateFile.html">
+NtCreateFile</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtWriteFile.html">NtWriteFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

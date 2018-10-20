@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtDelayExecution</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 17 December</p>
+<br/>
+<div class="text">NtDelayExecution</div>
+<div class="highlight">NtDelayExecution</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtDelayExecution(
+<br/>
+
+  IN BOOLEAN              <i><font color="blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">DelayInterval</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<li>Alertable If set, execution can break
+in a result of <a href="NtAlertThread.html">NtAlertThread</a>
+call.
+
+<ul>
+<li>DelayInterval Delay in 100-ns units.
+Negative value means delay relative to current.<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+<div class="Require">Requirements:</div>
+</dd>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/>
+<div class="Require">See also:</div></dd>
+<dd><a href="NtAlertThread.html">NtAlertThread</a><br/>
+</dd>
+<dd><a href="NtSignalAndWaitForSingleObject.html">
+NtSignalAndWaitForSingleObject</a><br/>
+</dd>
+<dd><a href="NtWaitForMultipleObjects.html">
+NtWaitForMultipleObjects</a><br/>
+</dd>
+<dd><a href="NtWaitForSingleObject.html">
+NtWaitForSingleObject</a><br/>
+<hr class="page" noshade="" size="0" width="0"/>
+</dd>
+</dl></li>
+</ul></li>
+</body>
+</html>

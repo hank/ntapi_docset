@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>KiUserApcDispatcher</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 10 December</p>
+<br/>
+<div class="text">KiUserApcDispatcher</div>
+<div class="highlight">KiUserApcDispatcher</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+VOID
+NTAPI
+<br/>
+KiUserApcDispatcher(
+<br/>
+
+  IN PVOID                <i><font color="blue">Unused1</font></i>,
+  IN PVOID                <i><font color="blue">Unused2</font></i>,
+  IN PVOID                <i><font color="blue">Unused3</font></i>,
+  IN PVOID                <i><font color="blue">ContextStart</font></i>,
+  IN PVOID                <i><font color="blue">ContextBody</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>Unused1 Unused parameters. Sometimes
+one of them have <b><i>ntdll.dll</i></b> module address.</li>
+</ul>
+<ul>
+<li>Unused2 See <font class="ParamNameDesc">Unused1</font>.</li>
+</ul>
+<ul>
+<li>Unused3 See <font class="ParamNameDesc">Unused1</font>.</li>
+</ul>
+<ul>
+<li>ContextStart Begining of <font class="ParamNameDesc">ContextStart</font> <b><u>CONTEXT</u></b> structure
+is stored.</li>
+</ul>
+<ul>
+<li>ContextBody Four bytes from
+<b><u>CONTEXT</u></b> structure at offset <i>0x04</i>.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+<b><u>KiUserApcDispatcher</u></b> isn't standard
+<b><i>ntdll</i></b> function. It's used by kernel to process <i>APC
+queue</i> for calling thread. Five paraters I defined only for
+compatibility with <b><i>ntdll.lib</i></b> export
+(<em><a class="__cf_email__" data-cfemail="c59a8eac90b6a0b784b5a681acb6b5a4b1a6ada0b785f7f5" href="email-protection">[emailprotected]</a></em>). Function first execute code
+placed after call, and next calls <a href="NtContinue.html">NtContinue</a> with
+<b><u>CONTEXT</u></b> specified at 4 parameter position
+(<font color="red">Warning:</font> Not pointer to
+<b><u>CONTEXT</u></b>, but <b><u>CONTEXT</u></b> body must be
+stored on stack).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAlertThread.html">NtAlertThread</a><br/>
+</dd>
+<dd><a href="NtContinue.html">
+NtContinue</a><br/>
+</dd>
+<dd><a href="NtQueueApcThread.html">NtQueueApcThread</a><br/>
+</dd>
+<dd><a href="NtTestAlert.html">NtTestAlert</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

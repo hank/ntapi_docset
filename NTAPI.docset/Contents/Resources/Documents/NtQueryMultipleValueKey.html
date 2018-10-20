@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQueryMultipleValueKey</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 2O February</p>
+<br/>
+<div class="text">NtQueryMultipleValueKey</div>
+<div class="highlight">NtQueryMultipleValueKey</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtQueryMultipleValueKey(
+<br/>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN OUT PKEY_MULTIPLE_VALUE_INFORMATION <i><font color="blue">ValuesList</font></i>,
+  IN ULONG                <i><font color="blue">NumberOfValues</font></i>,
+  OUT PVOID               <i><font color="blue">DataBuffer</font></i>,
+  IN OUT ULONG            <i><font color="blue">BufferLength</font></i>,
+  OUT PULONG              <i><font color="blue">RequiredLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtQueryMultipleValueKey</u></b> returns data of one
+or more values under specified Key Object.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>KeyHandle <b>HANDLE</b> to Key Object
+opened with <b>KEY_READ</b> access.</li>
+</ul>
+<ul>
+<li>ValuesList Array of <a href="KEY_MULTIPLE_VALUE_INFORMATION.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a> structures contains names of
+values to query.</li>
+</ul>
+<ul>
+<li>NumberOfValues Number of members in
+<font class="ParamNameDesc">ValueList</font> array.</li>
+</ul>
+<ul>
+<li>DataBuffer User's allocated buffer
+receiving queried value's data.</li>
+</ul>
+<ul>
+<li>BufferLength Pointer to value specifing
+length of <font class="ParamNameDesc">DataBuffer</font>, in
+bytes.</li>
+</ul>
+<ul>
+<li>RequiredLength Optionally pointer to
+value receiving required <font class="ParamNameDesc">DataBuffer</font> length, in bytes.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="KEY_MULTIPLE_VALUE_INFORMATION.html">
+KEY_MULTIPLE_VALUE_INFORMATION</a><br/>
+</dd>
+<dd><a href="NtCreateKey.html">
+NtCreateKey</a><br/>
+</dd>
+<dd><a href="NtEnumerateValueKey.html">
+NtEnumerateValueKey</a><br/>
+</dd>
+<dd><a href="NtOpenKey.html">
+NtOpenKey</a><br/>
+</dd>
+<dd><a href="NtQueryValueKey.html">
+NtQueryValueKey</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>FILE_NOTIFY_INFORMATION</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 1O February</p>
+<br/>
+<div class="text">FILE_NOTIFY_INFORMATION</div>
+<div class="highlight">FILE_NOTIFY_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _FILE_NOTIFY_INFORMATION {
+<br/>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color="blue">Action</font></i>;
+  ULONG                   <i><font color="blue">FileNameLength</font></i>;
+  WCHAR                   <i><font color="blue">FileName[1]</font></i>;
+
+} FILE_NOTIFY_INFORMATION, *PFILE_NOTIFY_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>FILE_NOTIFY_INFORMATION</u></b> structure is used in
+processing results of call <a href="NtNotifyChangeDirectoryFile.html">
+NtNotifyChangeDirectoryFile</a>. It is defined in
+<b><i>&lt;WinNT.h&gt;</i></b> include file.
+
+<ul>
+<li>NextEntryOffset Offset to next
+<b><u>FILE_NOTIFY_INFORMATION</u></b> structure or zero, if
+last.</li>
+</ul>
+<ul>
+<li>Action Action indicates notification
+purpose. Can be one of:<br/></li>
+</ul>
+<ul>
+<li><b>FILE_ACTION_ADDED</b>
+</li>
+<li><b>FILE_ACTION_REMOVED</b>
+</li>
+<li><b>FILE_ACTION_MODIFIED</b>
+</li>
+<li><b>FILE_ACTION_RENAMED_OLD_NAME</b>
+</li>
+<li><b>FILE_ACTION_RENAMED_NEW_NAME</b>
+</li>
+<li><b>FILE_ACTION_ADDED_STREAM</b>
+</li>
+<li><b>FILE_ACTION_REMOVED_STREAM</b>
+</li>
+<li><b>FILE_ACTION_MODIFIED_STREAM</b>
+</li>
+</ul>
+<ul>
+<li>FileNameLength Length of FileName
+array, in bytes.</li>
+</ul>
+<ul>
+<li>FileName[1] Unicode file name.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Only some of notification reasons can be readed from <font class="ParamNameDesc">Action</font> member. In most cases is contains
+<b>FILE_ACTION_MODIFIED</b> value, and user must check sort of
+notitication manually.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtNotifyChangeDirectoryFile.html">
+NtNotifyChangeDirectoryFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

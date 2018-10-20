@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtProtectVirtualMemory</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 5 December</p>
+<br/>
+<div class="text">NtProtectVirtualMemory</div>
+<div class="highlight">NtProtectVirtualMemory</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtProtectVirtualMemory(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color="blue">*BaseAddress</font></i>,
+  IN OUT PULONG           <i><font color="blue">NumberOfBytesToProtect</font></i>,
+  IN ULONG                <i><font color="blue">NewAccessProtection</font></i>,
+  OUT PULONG              <i><font color="blue">OldAccessProtection</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+</pre>
+<h6>ProcessHandle</h6>
+<pre>Handle to Process Object opened with <b>PROCESS_VM_OPERATION</b> access.
+
+</pre>
+<h6>*BaseAddress</h6>
+<pre>Pointer to base address to protect. Protection will change on all page containing specified address. On output, <font class="ParamNameDesc">BaseAddress</font> will point to page start address.
+
+</pre>
+<h6>NumberOfBytesToProtect</h6>
+<pre>Pointer to size of region to protect. On output will be round to page size (4KB).
+
+</pre>
+<h6>NewAccessProtection</h6>
+<pre>One or some of <b>PAGE_... </b>attributess.
+
+</pre>
+<h6>OldAccessProtection</h6>
+<pre>Receive previous protection.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAllocateVirtualMemory.html">NtAllocateVirtualMemory</a><br/>
+</dd>
+<dd><a href="NtQueryVirtualMemory.html">NtQueryVirtualMemory</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

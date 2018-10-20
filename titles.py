@@ -70,20 +70,26 @@ title_dict = {
 
 def create_tokens(out_path):
     from main import root_path
-    print "Creating token file"
-    out_file = open(out_path, "wb")
-    print >>out_file, '<Tokens version="1.0">'
+    print("Creating token file")
+    out_file = open(out_path, "w")
+    out_file.write('<Tokens version="1.0">')
 
-    fs = glob.glob("{}*.html".format(root_path))
+    fs = []
+    for root, dirs, files in os.walk(root_path):
+        for name in files:
+            if name.endswith('.html'):
+                print(name)
+                fs.append(os.path.join(root, name))
     titles = Counter()
     referenced = 0
     for f in fs:
-        d = open(f, "rb").read()
+        print(f)
+        d = open(f, "r").read()
         try:
-            title = re.search('<h1 class="title">([^\[(<]*)', d, re.DOTALL).group(1)
+            title = re.search('<title>([^\[(<]*)', d, re.DOTALL).group(1)
             assert title.strip()
         except:
-            print "Failed to parse title:", f
+            print("Failed to parse title:", f)
             continue
 
         title = title.strip()
@@ -98,17 +104,17 @@ def create_tokens(out_path):
                 obj_type = "Category"
             if obj_type in ["Category", "Interface"]:
                 title_name = title
-            print >>out_file, token_entry_template.format(file_path, obj_type, title_name)
+            out_file.write(token_entry_template.format(file_path, obj_type, title_name)+'\n')
             referenced += 1
 
         titles.update([title_type])
 
-    print >>out_file, '</Tokens>'
+    out_file.write('</Tokens>\n')
 
-    print "%d added to token" % referenced
-    print "Top Titles:"
+    print("%d added to token" % referenced)
+    print("Top Titles:")
     for title, count in titles.most_common(40):
-        print '\t', title, count
+        print('\t', title, count)
 
 if __name__ == "__main__":
-    create_tokens("MSDN.docset/Contents/Resources/Tokens.xml")
+    create_tokens("NTAPI.docset/Contents/Resources/Tokens.xml")

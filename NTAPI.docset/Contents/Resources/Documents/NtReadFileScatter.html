@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtReadFileScatter</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 14 February</p>
+<br/>
+<div class="text">NtReadFileScatter</div>
+<div class="highlight">NtReadFileScatter</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtReadFileScatter(
+<br/>
+
+  IN HANDLE               <i><font color="blue">FileHandle</font></i>,
+  IN HANDLE               <i><font color="blue">Event</font></i> OPTIONAL,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i> OPTIONAL,
+  IN PVOID                <i><font color="blue">ApcContext</font></i> OPTIONAL,
+  OUT PIO_STATUS_BLOCK    <i><font color="blue">IoStatusBlock</font></i>,
+  IN FILE_SEGMENT_ELEMENT <i><font color="blue">SegmentArray</font></i>,
+  IN ULONG                <i><font color="blue">Length</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">ByteOffset</font></i>,
+  IN PULONG               <i><font color="blue">Key</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtReadFileScatter</u></b> reads specified block from
+file into multiple buffers. Each buffer must have one page length
+(<i>0x1000</i> bytes on <b><i>x86</i></b>).<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>FileHandle <b>HANDLE</b> to File Object
+opened with <b>FILE_READ_DATA</b> access and with
+<b>FILE_NO_INTERMEDIATE_BUFFERING</b> open option.</li>
+</ul>
+<ul>
+<li>Event <b>HANDLE</b> to Event Object
+signaled when reading is complete. This parameter is optional, but
+caller should use one of notification way, becouse function always
+use asynchronous reading method.</li>
+</ul>
+<ul>
+<li>ApcRoutine Optional pointer to user's
+<i>APC Routine</i>.</li>
+</ul>
+<ul>
+<li>ApcContext User's parameter for
+<font class="ParamNameDesc">ApcRoutine</font>.</li>
+</ul>
+<ul>
+<li>IoStatusBlock IO result of call.</li>
+</ul>
+<ul>
+<li>SegmentArray Array of
+<b>FILE_SEGMENT_ELEMENT</b> unions. Any element point to allocated
+memory page address. Last element of array must be
+<i>NULL</i>.</li>
+</ul>
+<ul>
+<li>Length Number of bytes to read.</li>
+</ul>
+<ul>
+<li>ByteOffset Pointer to
+<b>LARGE_INTEGER</b> value indicates reading start position.</li>
+</ul>
+<ul>
+<li>Key Optional pointer to user's key,
+used when file is locked (see <a href="NtLockFile.html">
+NtLockFile</a>).<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+See also <b><u>ReadFileScatter</u></b> description in <i>Microsoft
+SDK</i>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateFile.html">
+NtCreateFile</a><br/>
+</dd>
+<dd><a href="NtLockFile.html">
+NtLockFile</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtReadFile.html">
+NtReadFile</a><br/>
+</dd>
+<dd><a href="NtUnlockFile.html">
+NtUnlockFile</a><br/>
+</dd>
+<dd><a href="NtWriteFileGather.html">
+NtWriteFileGather</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

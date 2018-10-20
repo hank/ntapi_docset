@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtNotifyChangeKey</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 19 October</p>
+<br/>
+<div class="text">NtNotifyChangeKey</div>
+<div class="highlight">NtNotifyChangeKey</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtNotifyChangeKey(
+<br/>
+
+  IN HANDLE               <i><font color="blue">KeyHandle</font></i>,
+  IN HANDLE               <i><font color="blue">EventHandle</font></i>,
+  IN PIO_APC_ROUTINE      <i><font color="blue">ApcRoutine</font></i>,
+  IN PVOID                <i><font color="blue">ApcRoutineContext</font></i>,
+  IN PIO_STATUS_BLOCK     <i><font color="blue">IoStatusBlock</font></i>,
+  IN ULONG                <i><font color="blue">NotifyFilter</font></i>,
+  IN BOOLEAN              <i><font color="blue">WatchSubtree</font></i>,
+  OUT PVOID               <i><font color="blue">RegChangesDataBuffer</font></i>,
+  IN ULONG                <i><font color="blue">RegChangesDataBufferLength</font></i>,
+  IN BOOLEAN              <i><font color="blue">Asynchronous</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+
+
+
+</pre>
+<br/>
+<br/>
+<div class="Require">Requirements:</div>
+<dl>
+<dd class="req">Library: <strong>ntdll.lib</strong></dd>
+<dd><br/>
+<br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">See also:</div>
+<a href="NtOpenKey.html">NtOpenKey</a><br/>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

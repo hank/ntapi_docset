@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>OBJECT_BASIC_INFORMATION</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO4, 6 October</p>
+<br/>
+<div class="text">OBJECT_BASIC_INFORMATION</div>
+<div class="highlight">OBJECT_BASIC_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _OBJECT_BASIC_INFORMATION {
+<br/>
+
+  ULONG                   <i><font color="blue">Attributes</font></i>;
+  ACCESS_MASK             <i><font color="blue">DesiredAccess</font></i>;
+  ULONG                   <i><font color="blue">HandleCount</font></i>;
+  ULONG                   <i><font color="blue">ReferenceCount</font></i>;
+  ULONG                   <i><font color="blue">PagedPoolUsage</font></i>;
+  ULONG                   <i><font color="blue">NonPagedPoolUsage</font></i>;
+  ULONG                   <i><font color="blue">Reserved[3]</font></i>;
+  ULONG                   <i><font color="blue">NameInformationLength</font></i>;
+  ULONG                   <i><font color="blue">TypeInformationLength</font></i>;
+  ULONG                   <i><font color="blue">SecurityDescriptorLength</font></i>;
+  LARGE_INTEGER           <i><font color="blue">CreationTime</font></i>;
+
+} OBJECT_BASIC_INFORMATION, *POBJECT_BASIC_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>OBJECT_BASIC_INFORMATION</u></b> is returned in a
+result of call <a href="NtQueryObject.html">
+NtQueryObject</a> with <a href="OBJECT_INFORMATION_CLASS.html#ObjectBasicInformation">
+ObjectBasicInformation</a> information class.
+
+<ul>
+<li>Attributes </li>
+</ul>
+<ul>
+<li>DesiredAccess </li>
+</ul>
+<ul>
+<li>HandleCount </li>
+</ul>
+<ul>
+<li>ReferenceCount </li>
+</ul>
+<ul>
+<li>PagedPoolUsage </li>
+</ul>
+<ul>
+<li>NonPagedPoolUsage </li>
+</ul>
+<ul>
+<li>Reserved[3] </li>
+</ul>
+<ul>
+<li>NameInformationLength </li>
+</ul>
+<ul>
+<li>TypeInformationLength </li>
+</ul>
+<ul>
+<li>SecurityDescriptorLength </li>
+</ul>
+<ul>
+<li>CreationTime <br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtQueryObject.html">
+NtQueryObject</a><br/>
+</dd>
+<dd><a href="OBJECT_INFORMATION_CLASS.html">
+OBJECT_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtDuplicateToken</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 15 February</p>
+<br/>
+<div class="text">NtDuplicateToken</div>
+<div class="highlight">NtDuplicateToken</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtDuplicateToken(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ExistingToken</font></i>,
+  IN ACCESS_MASK          <i><font color="blue">DesiredAccess</font></i>,
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i> OPTIONAL,
+  IN SECURITY_IMPERSONATION_LEVEL <i><font color="blue">ImpersonationLevel</font></i>,
+  IN TOKEN_TYPE           <i><font color="blue">TokenType</font></i>,
+  OUT PHANDLE             <i><font color="blue">NewToken</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtDuplicateToken</u></b> creates new Token Object
+basing on existing Token Object.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>ExistingToken <b>HANDLE</b> to Token
+Object opened with <b>TOKEN_DUPLICATE</b> access.</li>
+</ul>
+<ul>
+<li>DesiredAccess Access mask for newly
+created token. Can be combination of:</li>
+</ul>
+<ul>
+<li><b>TOKEN_ASSIGN_PRIMARY</b>
+</li>
+<li><b>TOKEN_DUPLICATE</b>
+</li>
+<li><b>TOKEN_IMPERSONATE</b>
+</li>
+<li><b>TOKEN_QUERY</b>
+</li>
+<li><b>TOKEN_QUERY_SOURCE</b>
+</li>
+<li><b>TOKEN_ADJUST_PRIVILEGES</b>
+</li>
+<li><b>TOKEN_ADJUST_GROUPS</b>
+</li>
+<li><b>TOKEN_ADJUST_DEFAULT</b>
+</li>
+<li><b>TOKEN_ADJUST_SESSIONID</b>
+</li>
+</ul>
+<ul>
+<li>ObjectAttributes Optionally pointer to
+<b>OBJECT_ATTRIBUTES</b> structure, containing token's name.</li>
+</ul>
+<ul>
+<li>ImpersonationLevel Level of
+impersonation for new token.</li>
+</ul>
+<ul>
+<li>TokenType Type of new token.</li>
+</ul>
+<ul>
+<li>NewToken Result of call - pointer to
+<b>HANDLE</b> to new Token Object.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreateToken.html">NtCreateToken</a><br/>
+</dd>
+<dd><a href="NtOpenProcessToken.html">
+NtOpenProcessToken</a><br/>
+</dd>
+<dd><a href="NtOpenThreadToken.html">
+NtOpenThreadToken</a><br/>
+</dd>
+<dd><a href="NtQueryInformationToken.html">
+NtQueryInformationToken</a><br/>
+</dd>
+<dd><a href="NtSetInformationToken.html">
+NtSetInformationToken</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

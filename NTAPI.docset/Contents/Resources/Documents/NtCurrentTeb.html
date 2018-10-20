@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtCurrentTeb</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 2 March</p>
+<br/>
+<div class="text">NtCurrentTeb</div>
+<div class="highlight">NtCurrentTeb</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+PTEB
+NTAPI
+<br/>
+NtCurrentTeb(
+<br/>
+
+ );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtCurrentTeb</u></b> returns address of <a href="TEB.html">TEB</a>
+<i>(Thread Environment Block)</i> for calling thread.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<b><u>NtCurrentTeb</u></b> isn't typical <i>NT CALL</i> realised
+via <i>INT 2E</i>, becouse <a href="TEB.html">TEB</a>
+is accessable at address
+<b>fs:[</b><b><i>0018h</i></b><b>]</b>.<br/>
+<br/>
+Microsoft declare <b><u>NtCurrentTeb</u></b> as <i>__cdecl</i>, but
+<b><i>ntdll.dll</i></b> export it as <i>__stdcall</i> (it don't
+have metter, becouse function don't have any parameters), so you
+cannot use <b><i>ntdll.dll</i></b> export. In this case the better
+way is write <b><u>NtCurrentTeb</u></b> manually, declaring it as
+<i>__cdecl</i>.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="TEB.html">TEB</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

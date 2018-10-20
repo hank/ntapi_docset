@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>FILE_NAME_INFORMATION</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 13 March</p>
+<br/>
+<div class="text">FILE_NAME_INFORMATION</div>
+<div class="highlight">FILE_NAME_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _FILE_NAME_INFORMATION {
+<br/>
+
+  ULONG                   <i><font color="blue">FileNameLength</font></i>;
+  WCHAR                   <i><font color="blue">FileName[1]</font></i>;
+
+} FILE_NAME_INFORMATION, *PFILE_NAME_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>FILE_NAME_INFORMATION</u></b> contains name of
+queried file object. It's used as a result of call <a href="NtQueryInformationFile.html">
+NtQueryInformationFile</a> with <a href="FILE_INFORMATION_CLASS.html#FileNameInformation">
+FileNameInformation</a> or <a href="FILE_INFORMATION_CLASS.html#FileAlternateNameInformation">
+FileAlternateNameInformation</a> information class.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>FileNameLength Length of <font class="ParamNameDesc">FileName</font>, in bytes.</li>
+</ul>
+<ul>
+<li>FileName[1] UNICODE name of file. If
+caller query about <a href="FILE_INFORMATION_CLASS.html#FileNameInformation">
+FileNameInformation</a>, <font class="ParamNameDesc">FileName</font> additionally contains path to file,
+and begins with <font color="red">'\'</font> (full path to file
+relative to device).<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Bo Branten</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="FILE_ALL_INFORMATION.html">FILE_ALL_INFORMATION</a><br/>
+</dd>
+<dd><a href="FILE_INFORMATION_CLASS.html">
+FILE_INFORMATION_CLASS</a><br/>
+</dd>
+<dd><a href="NtQueryInformationFile.html">
+NtQueryInformationFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

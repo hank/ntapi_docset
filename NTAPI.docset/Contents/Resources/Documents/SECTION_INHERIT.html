@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SECTION_INHERIT</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO0, 12 October</p>
+<br/>
+<div class="text">SECTION_INHERIT</div>
+<div class="highlight">SECTION_INHERIT</div>
+<br/>
+<pre class="FnDefinition">typedef enum _SECTION_INHERIT {
+<br/>
+
+
+    <a href="#ViewShare=1">ViewShare=1</a>,
+    <a href="#ViewUnmap=2">ViewUnmap=2</a>
+
+
+} SECTION_INHERIT, *PSECTION_INHERIT;
+</pre>
+<br/>
+<br/>
+<br/>
+Enumeration type <b><u>SECTION_INHERIT</u></b> is used in a call to
+<a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a>.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<h6><a id="ViewShare" name="ViewShare"></a>
+</h6>
+<ul>
+<li>ViewShare Created view of Section
+Object will be also mapped to any created in future process.</li>
+</ul>
+<h6><a id="ViewUnmap" name="ViewUnmap"></a>
+</h6>
+<ul>
+<li>ViewUnmap Created view will not be
+inherited by child processes.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtMapViewOfSection.html">
+NtMapViewOfSection</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

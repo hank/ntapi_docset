@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>RtlExpandEnvironmentStrings_U</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 3 December</p>
+<br/>
+<div class="text">RtlExpandEnvironmentStrings_U</div>
+<div class="highlight">RtlExpandEnvironmentStrings_U</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+RtlExpandEnvironmentStrings_U(
+<br/>
+
+  IN PVOID                <i><font color="blue">Environment</font></i> OPTIONAL,
+  IN PUNICODE_STRING      <i><font color="blue">SourceString</font></i>,
+  OUT PUNICODE_STRING     <i><font color="blue">DestinationString</font></i>,
+  OUT PULONG              <i><font color="blue">DestinationBufferLength</font></i> OPTIONAL );
+
+</pre>
+<br/>
+<br/>
+<h6>Environment</h6>
+<pre>Pointer to environment block.
+
+</pre>
+<h6>SourceString</h6>
+<pre>Pointer to <b><u>UNICODE_STRING</u></b> structure with text. If text contains any environment variable name separated with <font color="red">'%'</font> character, variable name is replaced by value of this variable.
+
+</pre>
+<h6>DestinationString</h6>
+<pre>Result of above operation. At input only <b><i>MaximumLength</i></b> of <b><u>UNICODE_STRING</u></b> structure must be valid.
+
+</pre>
+<h6>DestinationBufferLength</h6>
+<pre>If you don't know, how long should be result buffer, use value at <font class="ParamNameDesc">DestinationBufferLength</font> pointer.
+
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="RtlQueryEnvironmentVariable_U.html">
+RtlQueryEnvironmentVariable_U</a><br/>
+</dd>
+<dd><a href="RtlSetEnvironmentVariable.html">
+RtlSetEnvironmentVariable</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

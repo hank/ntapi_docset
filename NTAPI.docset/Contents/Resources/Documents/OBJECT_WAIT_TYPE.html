@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>OBJECT_WAIT_TYPE</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 17 January</p>
+<br/>
+<div class="text">OBJECT_WAIT_TYPE</div>
+<div class="highlight">OBJECT_WAIT_TYPE</div>
+<br/>
+<pre class="FnDefinition">typedef enum _OBJECT_WAIT_TYPE {
+<br/>
+
+
+    <a href="#WaitAllObject">WaitAllObject</a>,
+    <a href="#WaitAnyObject">WaitAnyObject</a>
+
+
+} OBJECT_WAIT_TYPE, *POBJECT_WAIT_TYPE;
+</pre>
+<br/>
+<br/>
+<br/>
+<b><u>OBJECT_WAIT_TYPE</u></b> is used in a call to <a href="NtWaitForMultipleObjects.html">NtWaitForMultipleObjects</a>.
+
+<h6><a id="WaitAllObject" name="WaitAllObject"></a>
+</h6>
+<ul>
+<li>WaitAllObject All objects specified in
+waiting function must be signaled to continue execution.</li>
+</ul>
+<h6><a id="WaitAnyObject" name="WaitAnyObject"></a>
+</h6>
+<ul>
+<li>WaitAnyObject At least one of specified
+objects must be signaled. Return value indicates position of
+signaled object in object's array. <b>STATUS_WAIT_0</b> indicates
+first element in object's array, <b>STATUS_WAIT_1</b> is the second
+etc.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtWaitForMultipleObjects.html">
+NtWaitForMultipleObjects</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

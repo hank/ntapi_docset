@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>KMODULE</title>
+<link href="css_1.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_2.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTOSKRNL</h3>
+<br/>
+<div class="text">KMODULE</div>
+<div class="highlight">KMODULE</div>
+<br/>
+<pre class="FnDefinition">typedef struct _KMODULE {
+<br/>
+
+  LIST_ENTRY          <i><font color="blue">KernelLoadedModuleList</font></i>;     // _PsLoadedModuleList if last
+  DWORD               d008;
+  DWORD               d00C;
+  PVOID               p010;
+  DWORD               p014;
+  PVOID               <i><font color="blue">ImageBase</font></i>;
+  PVOID               <i><font color="blue">EntryPoint</font></i>;
+  DWORD               d020;
+  UNICODE_STRING      <i><font color="blue">Path</font></i>;
+  UNICODE_STRING      <i><font color="blue">ModuleName</font></i>;
+
+} KMODULE, *PKMODULE;
+</pre>
+<br/>
+<br/>
+<h6>KernelLoadedModuleList</h6>
+<pre>
+</pre>
+<div class="reg">List begin from <b>_PsLoadedModuleList</b>.</div>
+<pre>
+</pre>
+<h6>sPath</h6>
+<div class="reg">System path to image file.</div>
+<pre>
+</pre>
+<h6>sModuleName</h6>
+<div class="reg">Module name, typically file name from <font class="ParamNameDesc">sPath</font>.</div>
+<pre>
+</pre>
+<br/>
+<br/>
+<div class="Require">Requirements:</div>
+<dl>
+<dd class="req">Library: <strong>ntoskrnl.lib</strong><br/>
+<br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

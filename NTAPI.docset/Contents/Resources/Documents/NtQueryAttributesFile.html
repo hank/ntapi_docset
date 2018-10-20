@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtQueryAttributesFile</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 9 January</p>
+<br/>
+<div class="text">NtQueryAttributesFile</div>
+<div class="highlight">NtQueryAttributesFile</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI
+NTSTATUS
+NTAPI
+<br/>
+NtQueryAttributesFile(
+<br/>
+
+  IN POBJECT_ATTRIBUTES   <i><font color="blue">ObjectAttributes</font></i>,
+  OUT PFILE_BASIC_INFORMATION <i><font color="blue">FileAttributes</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>ObjectAttributes Contains file name, in
+NT Objects Namespace format.</li>
+</ul>
+<ul>
+<li>FileAttributes Becouse only four bytes
+at offset <i>0x20</i> are used, this may be any buffer at least
+<i>0x24</i> bytes length. Time information fields from <a href="FILE_BASIC_INFORMATION.html">FILE_BASIC_INFORMATION</a> are
+skipped.<br/>
+<br/></li>
+</ul>
+<hr width="40%"/>
+<br/>
+Use of <b><u>NtQueryAttributesFile</u></b> is the easiest and the
+best way to check if file exist. <a href="NtOpenFile.html">
+NtOpenFile</a> isn't good for this, becouse it modifies last access
+time for opened file. See <a href="NtQueryDirectoryFile.html">NtQueryDirectoryFile</a> for
+details.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="FILE_BASIC_INFORMATION.html">FILE_BASIC_INFORMATION</a><br/>
+</dd>
+<dd><a href="NtOpenFile.html">
+NtOpenFile</a><br/>
+</dd>
+<dd><a href="NtQueryDirectoryFile.html">
+NtQueryDirectoryFile</a><br/>
+</dd>
+<dd><a href="NtQueryFullAttributesFile.html">NtQueryFullAttributesFile</a><br/>
+</dd>
+<dd><a href="NtQueryInformationFile.html">
+NtQueryInformationFile</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

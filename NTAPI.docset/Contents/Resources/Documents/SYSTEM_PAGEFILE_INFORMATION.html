@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SYSTEM_PAGEFILE_INFORMATION</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 9 February</p>
+<br/>
+<div class="text">SYSTEM_PAGEFILE_INFORMATION</div>
+<div class="highlight">SYSTEM_PAGEFILE_INFORMATION</div>
+<br/>
+<pre class="FnDefinition">typedef struct _SYSTEM_PAGEFILE_INFORMATION {
+<br/>
+
+  ULONG                   <i><font color="blue">NextEntryOffset</font></i>;
+  ULONG                   <i><font color="blue">TotalSize</font></i>;
+  ULONG                   <i><font color="blue">TotalInUse</font></i>;
+  ULONG                   <i><font color="blue">PeakUsage</font></i>;
+  UNICODE_STRING          <i><font color="blue">PageFileName</font></i>;
+
+} SYSTEM_PAGEFILE_INFORMATION, *PSYSTEM_PAGEFILE_INFORMATION;
+</pre>
+<br/>
+<br/>
+<br/>
+Structure <b><u>SYSTEM_PAGEFILE_INFORMATION</u></b> is used as a
+result of call <a href="NtQuerySystemInformation.html">
+NtQuerySystemInformation</a> with <a href="SystemPageFileInformation.html">SystemPageFileInformation</a>
+information class. If contains information about currently instaled
+Paged Files (files used by system for swap paged pool memory to
+disk).<br/>
+<br/>
+<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<br/>
+<ul>
+<li>NextEntryOffset Offset to next
+<b><u>SYSTEM_PAGEFILE_INFORMATION</u></b> structure or zero, if
+it's last one.</li>
+</ul>
+<ul>
+<li>TotalSize Size of paged file, in pages
+(Size of page depend on machine type, for <b><i>x86</i></b> one
+page is <i>0x1000</i> (<i>4096</i>) bytes).</li>
+</ul>
+<ul>
+<li>TotalInUse Number of currently used
+pages in paged file.</li>
+</ul>
+<ul>
+<li>PeakUsage Maximum number of pages used
+in this boot session.</li>
+</ul>
+<ul>
+<li>PageFileName System path to paged
+file.<br/>
+<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtCreatePagingFile.html">NtCreatePagingFile</a><br/>
+</dd>
+<dd><a href="NtQuerySystemInformation.html">
+NtQuerySystemInformation</a><br/>
+</dd>
+<dd><a href="SYSTEM_INFORMATION_CLASS.html">SYSTEM_INFORMATION_CLASS</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

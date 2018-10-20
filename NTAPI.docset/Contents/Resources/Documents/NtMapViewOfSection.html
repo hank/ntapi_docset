@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtMapViewOfSection</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 12 October</p>
+<br/>
+<div class="text">NtMapViewOfSection</div>
+<div class="highlight">NtMapViewOfSection</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtMapViewOfSection(
+<br/>
+
+  IN HANDLE               <i><font color="blue">SectionHandle</font></i>,
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN OUT PVOID            <i><font color="blue">*BaseAddress</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">ZeroBits</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">CommitSize</font></i>,
+  IN OUT PLARGE_INTEGER   <i><font color="blue">SectionOffset</font></i> OPTIONAL,
+  IN OUT PULONG           <i><font color="blue">ViewSize</font></i>,
+  IN                      <i><font color="blue">InheritDisposition</font></i>,
+  IN ULONG                <i><font color="blue">AllocationType</font></i> OPTIONAL,
+  IN ULONG                <i><font color="blue">Protect</font></i> );
+
+</pre>
+<br/>
+<br/>
+<br/>
+Function <b><u>NtMapViewOfSection</u></b> maps specified part of
+Section Object into process memory.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<ul>
+<li>SectionHandle <b>HANDLE</b> to Section
+Object opened with one or more from <b>SECTION_MAP_EXECUTE</b>,
+<b>SECTION_MAP_READ</b>, <b>SECTION_MAP_WRITE</b> attributes.</li>
+</ul>
+<ul>
+<li>ProcessHandle <b>HANDLE</b> to Process
+Object opened with <b>PROCESS_VM_OPERATION</b> access.</li>
+</ul>
+<ul>
+<li>*BaseAddress Pointer to variable
+receiving virtual address of mapped memory. If this value is not
+<i>NULL</i>, system tries to allocate memory from specified
+value.</li>
+</ul>
+<ul>
+<li>ZeroBits Indicates how many high bits
+must not be set in <font class="ParamNameDesc">BaseAddress</font>.</li>
+</ul>
+<ul>
+<li>CommitSize Size of initially commited
+memory, in bytes.</li>
+</ul>
+<ul>
+<li>SectionOffset Pointer to begin of
+mapped block in section. This value must be rounded up to
+<b>X64K</b> block size (<i>0x10000</i> on <b><i>X86</i></b>).</li>
+</ul>
+<ul>
+<li>ViewSize Pointer to size of mapped
+block, in bytes. This value is rounded up to page size
+(<i>0x1000</i> on <b><i>x86</i></b>).</li>
+</ul>
+<ul>
+<li>InheritDisposition How to child
+processes inherid maped section. See description of enumeration
+type <a href="SECTION_INHERIT.html">
+SECTION_INHERIT</a>.</li>
+</ul>
+<ul>
+<li>AllocationType Can be one of:</li>
+</ul>
+<ul>
+<li><b>MEM_COMMIT</b>
+</li>
+<li><b>MEM_RESERVE</b>
+</li>
+</ul>
+<ul>
+<li>Protect Page protection. Can be one
+of:</li>
+</ul>
+<ul>
+<li><b>PAGE_NOACCESS</b>
+</li>
+<li><b>PAGE_READONLY</b>
+</li>
+<li><b>PAGE_READWRITE</b>
+</li>
+<li><b>PAGE_WRITECOPY</b>
+</li>
+<li><b>PAGE_EXECUTE</b>
+</li>
+<li><b>PAGE_EXECUTE_READ</b>
+</li>
+<li><b>PAGE_EXECUTE_READWRITE</b>
+</li>
+<li><b>PAGE_EXECUTE_WRITECOPY</b>
+</li>
+<li><b>PAGE_GUARD</b>
+</li>
+<li><b>PAGE_NOCACHE</b>
+</li>
+<li><b>PAGE_WRITECOMBINE</b>
+</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Supported on system versions:</dt>
+<dd><strong>NT 4.0,Win 2000,Win XP/2003</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAllocateVirtualMemory.html">
+NtAllocateVirtualMemory</a><br/>
+</dd>
+<dd><a href="NtCreateSection.html">
+NtCreateSection</a><br/>
+</dd>
+<dd><a href="NtOpenSection.html">
+NtOpenSection</a><br/>
+</dd>
+<dd><a href="NtUnmapViewOfSection.html">
+NtUnmapViewOfSection</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

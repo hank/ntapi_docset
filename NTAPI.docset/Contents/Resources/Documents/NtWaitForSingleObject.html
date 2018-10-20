@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtWaitForSingleObject</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 17 January</p>
+<br/>
+<div class="text">NtWaitForSingleObject</div>
+<div class="highlight">NtWaitForSingleObject</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtWaitForSingleObject(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ObjectHandle</font></i>,
+  IN BOOLEAN              <i><font color="blue">Alertable</font></i>,
+  IN PLARGE_INTEGER       <i><font color="blue">TimeOut</font></i> OPTIONAL );  
+
+</pre>
+<br/>
+<br/>
+<br/>
+<ul>
+<li>ObjectHandle <b>HANDLE</b> to alertable
+object.</li>
+</ul>
+<ul>
+<li>Alertable If set, calling thread is
+signaled, so all queued <i>APC</i> routines are executed.</li>
+</ul>
+<ul>
+<li>TimeOut Time-out interval, in
+microseconds. <b><i>NULL</i></b> means infinite.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtSignalAndWaitForSingleObject.html">NtSignalAndWaitForSingleObject</a><br/>
+</dd>
+<dd><a href="NtWaitForMultipleObjects.html">
+NtWaitForMultipleObjects</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

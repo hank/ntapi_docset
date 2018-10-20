@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>NtUnlockVirtualMemory</title>
+<link href="css_5.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_6.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OOO, 5 December</p>
+<br/>
+<div class="text">NtUnlockVirtualMemory</div>
+<div class="highlight">NtUnlockVirtualMemory</div>
+<br/>
+<pre class="FnDefinition">NTSYSAPI 
+NTSTATUS
+NTAPI
+<br/>
+NtUnlockVirtualMemory(
+<br/>
+
+  IN HANDLE               <i><font color="blue">ProcessHandle</font></i>,
+  IN PVOID                <i><font color="blue">*BaseAddress</font></i>,
+  IN OUT PULONG           <i><font color="blue">NumberOfBytesToUnlock</font></i>,
+  IN ULONG                <i><font color="blue">LockType</font></i> );
+
+</pre>
+<br/>
+<br/>
+<pre>
+See <a href="NtLockVirtualMemory.html">NtLockVirtualMemory</a> for more information about parameters and usage.
+
+</pre>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><strong>Reactos</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtAllocateVirtualMemory.html">NtAllocateVirtualMemory</a><br/>
+</dd>
+<dd><a href="NtLockVirtualMemory.html">NtLockVirtualMemory</a><br/>
+</dd>
+<dd><a href="NtQueryVirtualMemory.html">NtQueryVirtualMemory</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>

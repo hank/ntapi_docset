@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="ntinternals undocumented functions windows nt ntapi ntdll" name="keywords">
+<meta content="text/css" http-equiv="Content-Style-Type"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="chm2web Pro 2.85 (unicode)" name="generator"/>
+<title>SHUTDOWN_ACTION</title>
+<link href="css_3.css" rel="stylesheet" title="Style" type="text/css"/>
+<link href="css_4.css" rel="stylesheet" type="text/css"/>
+</meta></head>
+<body>
+<!-- !chm2web! -->
+<h3 class="Header">Undocumented functions of NTDLL</h3>
+<p align="right" class="CompileDate">2OO1, 25 February</p>
+<br/>
+<div class="text">SHUTDOWN_ACTION</div>
+<div class="highlight">SHUTDOWN_ACTION</div>
+<br/>
+<pre class="FnDefinition">typedef enum _SHUTDOWN_ACTION {
+<br/>
+
+
+    <a href="#ShutdownNoReboot">ShutdownNoReboot</a>,
+    <a href="#ShutdownReboot">ShutdownReboot</a>,
+    <a href="#ShutdownPowerOff">ShutdownPowerOff</a>
+
+
+} SHUTDOWN_ACTION, *PSHUTDOWN_ACTION;
+</pre>
+<br/>
+<br/>
+<br/>
+Enumeration type <b><u>SHUTDOWN_ACTION</u></b> is used in a call to
+<a href="NtShutdownSystem.html">NtShutdownSystem</a>
+function.<br/>
+<br/>
+<hr width="40%"/>
+<br/>
+<h6><a id="ShutdownNoReboot" name="ShutdownNoReboot"></a>
+</h6>
+<ul>
+<li>ShutdownNoReboot Normal shutdown, after
+system closes, processor jump into infinite loop.</li>
+</ul>
+<h6><a id="ShutdownReboot" name="ShutdownReboot"></a>
+</h6>
+<ul>
+<li>ShutdownReboot <i>BIOS Reset</i>
+function is called, after system closes.</li>
+</ul>
+<h6><a id="ShutdownPowerOff" name="ShutdownPowerOff"></a>
+</h6>
+<ul>
+<li>ShutdownPowerOff <i>BIOS Shutdown</i>
+function is called after system closes. If hardware does not
+support this functionality, <font class="ParamNameDesc">ShutdownReboot</font> is automatically called.<br/>
+<br/>
+<br/>
+<dl>
+<dt class="Require">Documented by:</dt>
+<dd><strong>Tomasz Nowak</strong>
+</dd>
+<dd><br/>
+<br/>
+<br/>
+</dd>
+</dl></li>
+</ul>
+<div class="Require">Requirements:</div>
+<dl>
+<dd>Library: <strong class="req">ntdll.lib</strong><br/>
+<br/>
+<br/></dd>
+</dl>
+<div class="Require">See also:</div>
+<dl>
+<dd><a href="NtShutdownSystem.html">NtShutdownSystem</a><br/>
+</dd>
+</dl>
+<hr class="page" noshade="" size="0" width="0"/>
+</body>
+</html>
